@@ -80,10 +80,12 @@ export function useAuditForm(hasWeb: boolean): AuditFormApi {
       }
       if (status === 'submitting') return;
       setStatus('submitting');
-      subscribe(MAILCHIMP.action, collectFields(event.currentTarget, 'audit-')).then((outcome) => {
-        setStatus(outcome);
-        if (outcome === 'success') trackLead({ hasWeb: values.hasWeb, business: values.business });
-      });
+      subscribe(MAILCHIMP.action, collectFields(event.currentTarget, 'audit-'))
+        .then((outcome) => {
+          setStatus(outcome);
+          if (outcome === 'success') trackLead({ hasWeb: values.hasWeb, business: values.business });
+        })
+        .catch(() => setStatus('error'));
     },
     [step, values, status, focusField, changeStep],
   );

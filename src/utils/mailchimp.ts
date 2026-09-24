@@ -23,8 +23,16 @@ export function classifyResponse(response: MailchimpResponse): SubscribeOutcome 
 }
 
 export function subscribe(action: string, fields: Record<string, string>): Promise<SubscribeOutcome> {
+  const callback = `mcCallback${Date.now()}`;
+  let src: string;
+  try {
+    src = toJsonpUrl(action, fields, callback);
+  } catch (error) {
+    console.error('[mailchimp] invalid form action URL', action, error);
+    return Promise.resolve('error');
+  }
+
   return new Promise((resolve) => {
-    const callback = `mcCallback${Date.now()}`;
     const registry = window as unknown as Record<string, unknown>;
     const script = document.createElement('script');
 
@@ -37,7 +45,7 @@ export function subscribe(action: string, fields: Record<string, string>): Promi
     const timer = window.setTimeout(() => finish('error'), TIMEOUT_MS);
 
     registry[callback] = (response: MailchimpResponse) => finish(classifyResponse(response));
-    script.src = toJsonpUrl(action, fields, callback);
+    script.src = src;
     script.onerror = () => finish('error');
     document.body.appendChild(script);
   });
