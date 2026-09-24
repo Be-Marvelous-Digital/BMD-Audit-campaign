@@ -1,7 +1,7 @@
 import { memo, useCallback, useMemo } from 'react';
 import { MAILCHIMP } from '../../config/mailchimp';
 import { useAuditForm } from '../../hooks/useAuditForm';
-import { buildMessage, STEP_NAMES } from './AuditForm.helpers';
+import { buildMessage, noteLimit, STEP_NAMES } from './AuditForm.helpers';
 import { BusinessStep } from './BusinessStep';
 import { ContactStep } from './ContactStep';
 import { FormSuccess } from './FormSuccess';
@@ -24,6 +24,8 @@ export const AuditForm = memo(({ hasWeb, onHasWebChange }: AuditFormProps) => {
   const setName = useCallback((value: string) => setText('name', value), [setText]);
   const setPhone = useCallback((value: string) => setText('phone', value), [setText]);
   const setEmail = useCallback((value: string) => setText('email', value), [setText]);
+  const setNote = useCallback((value: string) => setText('note', value), [setText]);
+  const limit = useMemo(() => noteLimit(values), [values]);
   const goToWebsite = useCallback(() => goToStep(2), [goToStep]);
 
   if (status === 'success') {
@@ -85,12 +87,15 @@ export const AuditForm = memo(({ hasWeb, onHasWebChange }: AuditFormProps) => {
         name={values.name}
         phone={values.phone}
         email={values.email}
+        note={values.note}
+        noteLimit={limit}
         errors={errors}
         status={status}
         headingRef={step === 3 ? headingRef : undefined}
         onNameChange={setName}
         onPhoneChange={setPhone}
         onEmailChange={setEmail}
+        onNoteChange={setNote}
         onBack={goBack}
       />
 

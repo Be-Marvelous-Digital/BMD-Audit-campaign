@@ -3,6 +3,7 @@ import { MAILCHIMP } from '../../config/mailchimp';
 import { SITE } from '../../config/site';
 import { ArrowIcon } from '../ArrowIcon';
 import { FormField } from '../FormField';
+import { pluralizeCharacters } from '../../utils/format';
 import type { FieldErrors } from './AuditForm.helpers';
 import type { SubmitStatus } from '../../hooks/useAuditForm';
 import { StepHeading } from './StepHeading';
@@ -15,12 +16,15 @@ interface ContactStepProps {
   name: string;
   phone: string;
   email: string;
+  note: string;
+  noteLimit: number;
   errors: FieldErrors;
   status: SubmitStatus;
   headingRef?: RefObject<HTMLHeadingElement | null>;
   onNameChange: (value: string) => void;
   onPhoneChange: (value: string) => void;
   onEmailChange: (value: string) => void;
+  onNoteChange: (value: string) => void;
   onBack: () => void;
 }
 
@@ -35,12 +39,15 @@ export const ContactStep = memo(
     name,
     phone,
     email,
+    note,
+    noteLimit,
     errors,
     status,
     headingRef,
     onNameChange,
     onPhoneChange,
     onEmailChange,
+    onNoteChange,
     onBack,
   }: ContactStepProps) => {
     const submitLabel = hasWeb ? 'Poslať audit zadarmo' : 'Chcem konzultáciu';
@@ -91,6 +98,18 @@ export const ContactStep = memo(
             onChange={onPhoneChange}
           />
         </div>
+        <FormField
+          label="Chcete mi niečo odkázať?"
+          field="note"
+          placeholder="Napríklad čo vás na webe najviac trápi alebo otázka, ktorú máte."
+          value={note}
+          error={errors.note}
+          hint={`Zostáva ${pluralizeCharacters(Math.max(0, noteLimit - note.length))}`}
+          maxLength={noteLimit}
+          multiline
+          optional
+          onChange={onNoteChange}
+        />
         {isAlert(status) && <SubmitAlert kind={status} />}
         <div className={styles['form__nav--wrap']}>
           <button type="button" className={styles.form__back} onClick={onBack}>

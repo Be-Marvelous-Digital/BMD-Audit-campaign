@@ -1,6 +1,6 @@
 export type FormStep = 1 | 2 | 3;
 
-export type FieldName = 'business' | 'website' | 'name' | 'email' | 'phone';
+export type FieldName = 'business' | 'website' | 'name' | 'email' | 'phone' | 'note';
 
 export interface AuditValues {
   business: string;
@@ -10,6 +10,7 @@ export interface AuditValues {
   name: string;
   phone: string;
   email: string;
+  note: string;
 }
 
 export type FieldErrors = Partial<Record<FieldName, string>>;
@@ -32,6 +33,7 @@ export const EMPTY_VALUES: AuditValues = {
   name: '',
   phone: '',
   email: '',
+  note: '',
 };
 
 export function validateStep(step: FormStep, values: AuditValues): FieldErrors {
@@ -51,6 +53,9 @@ export function validateStep(step: FormStep, values: AuditValues): FieldErrors {
     if (!values.name.trim()) errors.name = 'Napíšte prosím svoje meno.';
     if (!values.email.trim()) errors.email = 'Nechajte mi e-mail, nech vám mám kam poslať výsledok.';
     else if (!EMAIL_PATTERN.test(values.email.trim())) errors.email = 'Skontrolujte e-mail, chýba v ňom niečo.';
+    if (values.note.trim().length > noteLimit(values)) {
+      errors.note = `Správa je príliš dlhá. Skráťte ju na ${noteLimit(values)} znakov.`;
+    }
     if (values.phone.trim() && !PHONE_PATTERN.test(values.phone.trim())) {
       errors.phone = 'Telefón zadajte v tvare +421 9xx xxx xxx.';
     }
@@ -59,17 +64,28 @@ export function validateStep(step: FormStep, values: AuditValues): FieldErrors {
   return errors;
 }
 
-export function buildMessage(values: AuditValues): string {
-  const lines = [
-    values.hasWeb ? '[Audit zadarmo] Žiadosť o audit webu' : '[Audit zadarmo] Žiadosť o konzultáciu (bez webu)',
+const MAILCHIMP_TEXT_LIMIT = 255;
+const NOTE_LABEL = '\nSpráva: ';
+
+function buildMessageBase(values: AuditValues): string {
+  return [
+    values.hasWeb ? '[Audit zadarmo] Audit webu' : '[Audit zadarmo] Konzultácia (bez webu)',
     `Biznis: ${values.business || 'neuvedené'}`,
     `Web: ${values.hasWeb ? values.website.trim() : 'nemá'}`,
-    `Instagram / Google profil: ${values.social.trim() || 'neuvedené'}`,
-  ];
-  return lines.join('\n');
+    `Profil: ${values.social.trim() || 'neuvedené'}`,
+  ].join('\n');
+}
+
+export function noteLimit(values: AuditValues): number {
+  return Math.max(0, MAILCHIMP_TEXT_LIMIT - buildMessageBase(values).length - NOTE_LABEL.length);
+}
+
+export function buildMessage(values: AuditValues): string {
+  const note = values.note.trim();
+  return note ? `${buildMessageBase(values)}${NOTE_LABEL}${note}` : buildMessageBase(values);
 }
 
 export function firstErrorField(errors: FieldErrors): FieldName | undefined {
-  const order: FieldName[] = ['business', 'website', 'name', 'email', 'phone'];
+  const order: FieldName[] = ['business', 'website', 'name', 'email', 'phone', 'note'];
   return order.find((field) => errors[field]);
 }
