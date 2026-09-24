@@ -14,7 +14,7 @@ interface AuditFormProps {
 }
 
 export const AuditForm = memo(({ hasWeb, onHasWebChange }: AuditFormProps) => {
-  const { step, values, errors, status, formRef, headingRef, setText, setConsent, goBack, goToStep, handleSubmit } =
+  const { step, values, errors, status, formRef, headingRef, setText, goBack, goToStep, handleSubmit } =
     useAuditForm(hasWeb);
 
   const message = useMemo(() => buildMessage(values), [values]);
@@ -85,18 +85,17 @@ export const AuditForm = memo(({ hasWeb, onHasWebChange }: AuditFormProps) => {
         name={values.name}
         phone={values.phone}
         email={values.email}
-        consent={values.consent}
         errors={errors}
         status={status}
         headingRef={step === 3 ? headingRef : undefined}
         onNameChange={setName}
         onPhoneChange={setPhone}
         onEmailChange={setEmail}
-        onConsentChange={setConsent}
         onBack={goBack}
       />
 
       <input type="hidden" name={MAILCHIMP.fields.message} value={message} />
+      {MAILCHIMP.tagId && <input type="hidden" name="tags" value={MAILCHIMP.tagId} />}
       <div className={styles.form__trap} aria-hidden="true">
         <input type="text" name={MAILCHIMP.honeypot} tabIndex={-1} defaultValue="" autoComplete="off" />
       </div>

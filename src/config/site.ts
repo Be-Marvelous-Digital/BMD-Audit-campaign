@@ -13,4 +13,14 @@ export const SITE = {
   privacyUrl: 'https://bemarvelousdigital.sk/privacy-policy',
   email: 'peter@bemarvelousdigital.sk',
   author: 'Peter Lehocky',
+  company: {
+    legalName: 'Be Marvelous Digital, s. r. o.',
+    street: 'Karpatské námestie 10A',
+    postalCode: '831 06',
+    city: 'Bratislava',
+    district: 'mestská časť Rača',
+    ico: '54641268',
+    dic: '2121746627',
+    icDph: 'SK2121746627',
+  },
 } as const;

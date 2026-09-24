@@ -10,9 +10,10 @@ import {
 } from '../components/AuditForm/AuditForm.helpers';
 import { MAILCHIMP } from '../config/mailchimp';
 import { collectFields, subscribe, type SubscribeOutcome } from '../utils/mailchimp';
+import { trackLead } from '../utils/metaPixel';
 
 type EditableValues = Omit<AuditValues, 'hasWeb'>;
-type TextField = Exclude<keyof EditableValues, 'consent'>;
+type TextField = keyof EditableValues;
 
 export type SubmitStatus = 'idle' | 'submitting' | SubscribeOutcome;
 
@@ -24,7 +25,6 @@ interface AuditFormApi {
   formRef: RefObject<HTMLFormElement | null>;
   headingRef: RefObject<HTMLHeadingElement | null>;
   setText: (field: TextField, value: string) => void;
-  setConsent: (value: boolean) => void;
   goBack: () => void;
   goToStep: (step: FormStep) => void;
   handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
@@ -62,11 +62,6 @@ export function useAuditForm(hasWeb: boolean): AuditFormApi {
     setErrors((current) => ({ ...current, [field]: undefined }));
   }, []);
 
-  const setConsent = useCallback((value: boolean) => {
-    setEditable((current) => ({ ...current, consent: value }));
-    setErrors((current) => ({ ...current, consent: undefined }));
-  }, []);
-
   const goBack = useCallback(() => changeStep(step === 3 ? 2 : 1), [changeStep, step]);
 
   const handleSubmit = useCallback(
@@ -85,7 +80,10 @@ export function useAuditForm(hasWeb: boolean): AuditFormApi {
       }
       if (status === 'submitting') return;
       setStatus('submitting');
-      subscribe(MAILCHIMP.action, collectFields(event.currentTarget, 'audit-')).then(setStatus);
+      subscribe(MAILCHIMP.action, collectFields(event.currentTarget, 'audit-')).then((outcome) => {
+        setStatus(outcome);
+        if (outcome === 'success') trackLead({ hasWeb: values.hasWeb, business: values.business });
+      });
     },
     [step, values, status, focusField, changeStep],
   );
@@ -98,7 +96,6 @@ export function useAuditForm(hasWeb: boolean): AuditFormApi {
     formRef,
     headingRef,
     setText,
-    setConsent,
     goBack,
     goToStep: changeStep,
     handleSubmit,

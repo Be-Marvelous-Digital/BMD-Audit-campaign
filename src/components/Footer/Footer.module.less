@@ -19,7 +19,6 @@
     @media @bp-sm {
       flex-direction: column;
       align-items: flex-start;
-      padding-bottom: 104px;
     }
   }
 
@@ -43,7 +42,11 @@
 
   &__link {
     display: inline-block;
-    padding-block: @space-2;
+    padding: @space-2 0;
+    border: 0;
+    background: none;
+    font-size: inherit;
+    cursor: pointer;
     color: @color-cream-2;
     transition: color @duration-fast @ease-out;
 
@@ -56,5 +59,23 @@
 
   &__credit {
     margin: 0;
+  }
+
+  &__legal {
+    .container();
+    padding-bottom: @space-8;
+
+    @media @bp-sm {
+      padding-bottom: 104px;
+    }
+  }
+
+  &__legal-text {
+    margin: 0;
+    padding-top: @space-5;
+    border-top: 1px solid @color-cream-line;
+    font-size: @font-size-2xs;
+    line-height: 1.6;
+    color: @color-cream-3;
   }
 }
