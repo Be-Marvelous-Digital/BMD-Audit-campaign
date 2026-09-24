@@ -1,0 +1,93 @@
+@import (reference) 'global';
+@import (reference) 'mixins';
+
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: @z-header;
+  color: @color-cream;
+  transition:
+    background-color @duration-base @ease-out,
+    box-shadow @duration-base @ease-out,
+    color @duration-base @ease-out,
+    transform @duration-slow @ease-out;
+
+  &--hidden:not(:focus-within) {
+    @media @bp-md {
+      transform: translateY(-100%);
+      box-shadow: none;
+    }
+  }
+
+  &--dark,
+  &--light {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+  }
+
+  &--dark {
+    background: rgba(11, 11, 10, 0.78);
+    box-shadow: 0 1px 0 @color-cream-line;
+  }
+
+  &--light {
+    background: rgba(247, 244, 238, 0.9);
+    color: @color-ink;
+    box-shadow: 0 1px 0 @color-rule;
+  }
+
+  &__inner {
+    .container();
+    height: @header-height;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: @space-4;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: @space-3;
+    min-height: 44px;
+    border-radius: @radius-sm;
+  }
+
+  &__inner &__cta {
+    @media @bp-md {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-6px);
+      transition:
+        opacity @duration-base @ease-out,
+        transform @duration-base @ease-out,
+        visibility 0s linear @duration-base,
+        background-color @duration-base @ease-out,
+        border-color @duration-base @ease-out;
+
+      &--visible {
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  &__logo {
+    flex: none;
+  }
+
+  &__name {
+    font-family: @font-display;
+    font-weight: @font-weight-bold;
+    font-size: @font-size-sm;
+    letter-spacing: @tracking-wide;
+    text-transform: uppercase;
+
+    @media @bp-sm {
+      .visually-hidden();
+    }
+  }
+}
+

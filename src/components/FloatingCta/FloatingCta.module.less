@@ -1,0 +1,44 @@
+@import (reference) 'global';
+
+.floating {
+  position: fixed;
+  right: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  z-index: @z-floating;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 16px 24px;
+  border-radius: @radius-pill;
+  background: @color-accent;
+  color: @color-cream;
+  font-size: @font-size-xs;
+  font-weight: @font-weight-semibold;
+  letter-spacing: @tracking-wide;
+  text-transform: uppercase;
+  box-shadow: 0 16px 56px rgba(36, 72, 255, 0.45);
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition:
+    opacity @duration-slow @ease-out,
+    transform @duration-slow @ease-out,
+    background-color @duration-fast @ease-out;
+
+  &--visible {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  &:hover {
+    background: @color-accent-hover;
+  }
+
+  @media @bp-sm {
+    left: 16px;
+    right: 16px;
+    justify-content: center;
+  }
+}

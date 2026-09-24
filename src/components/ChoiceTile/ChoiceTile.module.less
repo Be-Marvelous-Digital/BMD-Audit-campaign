@@ -1,0 +1,52 @@
+@import (reference) 'global';
+@import (reference) 'mixins';
+
+.tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: @space-1;
+  min-height: 56px;
+  padding: 14px 18px;
+  border: 1px solid @color-cream-line-strong;
+  border-radius: @radius-sm;
+  background: @color-night-raised;
+  color: @color-cream;
+  cursor: pointer;
+  transition:
+    border-color @duration-fast @ease-out,
+    background-color @duration-fast @ease-out,
+    transform @duration-fast @ease-out;
+
+  &:hover {
+    border-color: @color-accent;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &--checked {
+    border-color: @color-accent;
+    background: @color-accent-tint-strong;
+  }
+
+  &:has(&__input:focus-visible) {
+    .focus-ring(2px);
+  }
+
+  &__input {
+    .visually-hidden();
+  }
+
+  &__label {
+    font-size: 0.9375rem;
+    font-weight: @font-weight-medium;
+  }
+
+  &__description {
+    font-size: @font-size-xs;
+    color: @color-cream-3;
+  }
+}

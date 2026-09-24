@@ -1,0 +1,111 @@
+@import (reference) 'global';
+@import (reference) 'mixins';
+
+.about {
+  .section-pad();
+  background: @color-night;
+  color: @color-cream;
+
+  &__inner {
+    .container();
+    .split-grid(380px);
+  }
+
+  &__copy {
+    display: flex;
+    flex-direction: column;
+    gap: @space-8;
+    min-width: 0;
+    container: about-copy / inline-size;
+
+    p {
+      max-width: 54ch;
+    }
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-between;
+    gap: @space-6;
+    margin: 0;
+
+    @container about-copy (max-width: 560px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    padding-top: @space-8;
+    border-top: 1px solid @color-cream-line;
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  &__stat-value {
+    margin: 0;
+    font-family: @font-display;
+    font-weight: @font-weight-black;
+    font-size: clamp(2rem, 1.4rem + 2vw, 2.5rem);
+    line-height: 1;
+    white-space: nowrap;
+    letter-spacing: @tracking-tight;
+  }
+
+  &__stat-label {
+    font-size: @font-size-2xs;
+    font-weight: @font-weight-medium;
+    letter-spacing: @tracking-wide;
+    text-transform: uppercase;
+    color: @color-cream-3;
+  }
+}
+
+.portrait {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin: 0;
+
+  &__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: @radius-lg;
+  }
+
+  &__card {
+    position: absolute;
+    inset: auto 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: @space-3;
+    padding: @space-4 @space-5;
+    border: 1px solid @color-cream-line;
+    border-radius: @radius-md;
+    background: rgba(11, 11, 10, 0.86);
+  }
+
+  &__who {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    text-align: right;
+  }
+
+  &__name {
+    font-family: @font-display;
+    font-weight: @font-weight-bold;
+    font-size: @font-size-md;
+  }
+
+  &__role {
+    font-size: @font-size-xs;
+    color: @color-cream-3;
+  }
+}

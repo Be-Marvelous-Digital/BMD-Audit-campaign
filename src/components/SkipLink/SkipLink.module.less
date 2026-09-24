@@ -1,0 +1,19 @@
+@import (reference) 'global';
+
+.skip {
+  position: fixed;
+  top: @space-3;
+  left: @space-3;
+  z-index: @z-skip;
+  padding: @space-3 @space-5;
+  border-radius: @radius-pill;
+  background: @color-cream;
+  color: @color-ink;
+  font-weight: @font-weight-semibold;
+  transform: translateY(-200%);
+  transition: transform @duration-base @ease-out;
+
+  &:focus-visible {
+    transform: none;
+  }
+}

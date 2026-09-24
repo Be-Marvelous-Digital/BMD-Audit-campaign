@@ -1,0 +1,136 @@
+@import (reference) 'global';
+@import (reference) 'mixins';
+
+.calc {
+  .section-pad();
+  position: relative;
+  overflow: hidden;
+  background: @color-night;
+  color: @color-cream;
+
+  &__wash {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 60%;
+    height: 140%;
+    background: radial-gradient(closest-side, rgba(36, 72, 255, 0.18), transparent);
+    pointer-events: none;
+  }
+
+  &__inner {
+    .container();
+    .split-grid(440px);
+    position: relative;
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    gap: @space-10;
+    min-width: 0;
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: @space-6;
+    max-width: 520px;
+  }
+}
+
+.result {
+  position: relative;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: @space-8;
+  overflow: hidden;
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px solid @color-cream-line;
+  border-radius: @radius-lg;
+  background: @color-night-raised;
+
+  &__rule {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, @color-accent, @color-accent-warm, transparent);
+  }
+
+  &__total {
+    display: flex;
+    flex-direction: column;
+    gap: @space-2;
+  }
+
+  &__label {
+    margin: 0;
+    .kicker(@color-cream-3);
+  }
+
+  &__amount {
+    margin: 0;
+    font-family: @font-display;
+    font-weight: @font-weight-black;
+    font-size: min(@font-size-price, 16cqi);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+    color: @color-cream;
+    white-space: nowrap;
+  }
+
+  &__split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: @radius-md;
+    background: @color-cream-line;
+  }
+
+  &__cell {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    gap: 6px;
+    padding: @space-5;
+    background: @color-night-raised;
+
+    @media @bp-sm {
+      padding: @space-4;
+    }
+  }
+
+  &__cell-value {
+    margin: 0;
+    font-family: @font-display;
+    font-weight: @font-weight-black;
+    font-size: clamp(1.25rem, 0.8rem + 1.8vw, 2.25rem);
+    letter-spacing: @tracking-tight;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__cell-label {
+    font-size: @font-size-2xs;
+    letter-spacing: @tracking-wide;
+    text-transform: uppercase;
+    color: @color-cream-3;
+  }
+
+  &__cta {
+    align-self: flex-start;
+  }
+
+  &__note {
+    margin: 0;
+    font-size: @font-size-2xs;
+    line-height: 1.5;
+    color: @color-cream-3;
+  }
+}
