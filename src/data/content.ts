@@ -106,7 +106,7 @@ export const leaks: Leak[] = [
   {
     number: '05',
     title: 'Zabudnú na vás.',
-    description: 'Web vyzerá ako tisíc iných. Nič, čo by si zapamätali alebo poslali kamarátke.',
+    description: 'Web vyzerá ako tisíc iných. Nič, čo by si zapamätali alebo poslali priateľovi.',
     tag: 'Prvý dojem',
   },
 ];
