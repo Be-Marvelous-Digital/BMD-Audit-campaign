@@ -23,6 +23,14 @@ Submitted fields: `EMAIL`, `FNAME`, `PHONE`, `MESSAGE`. Business type, website a
 
 An email that is already in the audience gets an "already subscribed" response from Mailchimp; the form then asks the visitor to write directly.
 
+## Meta Pixel
+
+Set `VITE_META_PIXEL_ID` (see `.env.example`). While the ID is the dummy `000000000000000`, the pixel is not loaded; in `npm run dev` events are logged to the console instead.
+
+- The pixel loads only after the visitor accepts marketing cookies in the consent banner (cookie `cookie_consent`, same format as bemarvelousdigital.sk). Consent can be changed via "Nastavenia cookies" in the footer; withdrawing it calls `fbq('consent', 'revoke')`.
+- On load: `PageView`.
+- On successful form submit: `Lead` with `content_name` (audit / konzultácia), `content_category` (business type), `value: 0`, `currency: EUR` and a unique `eventID` ready for Conversions API deduplication.
+
 ## Open Graph image
 
 `public/opengraph.png` (1200×630). Keep it under 300 KB so WhatsApp shows the preview.

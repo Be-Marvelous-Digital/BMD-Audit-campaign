@@ -1,4 +1,4 @@
-import { memo, useCallback, type ChangeEvent, type RefObject } from 'react';
+import { memo, type RefObject } from 'react';
 import { MAILCHIMP } from '../../config/mailchimp';
 import { SITE } from '../../config/site';
 import { ArrowIcon } from '../ArrowIcon';
@@ -6,7 +6,7 @@ import { FormField } from '../FormField';
 import type { FieldErrors } from './AuditForm.helpers';
 import type { SubmitStatus } from '../../hooks/useAuditForm';
 import { StepHeading } from './StepHeading';
-import { SubmitAlert } from './SubmitAlert';
+import { SubmitAlert, type SubmitAlertKind } from './SubmitAlert';
 import styles from './AuditForm.module.less';
 
 interface ContactStepProps {
@@ -15,15 +15,17 @@ interface ContactStepProps {
   name: string;
   phone: string;
   email: string;
-  consent: boolean;
   errors: FieldErrors;
   status: SubmitStatus;
   headingRef?: RefObject<HTMLHeadingElement | null>;
   onNameChange: (value: string) => void;
   onPhoneChange: (value: string) => void;
   onEmailChange: (value: string) => void;
-  onConsentChange: (value: boolean) => void;
   onBack: () => void;
+}
+
+function isAlert(status: SubmitStatus): status is SubmitAlertKind {
+  return status === 'error' || status === 'already-subscribed' || status === 'invalid-email' || status === 'rate-limited';
 }
 
 export const ContactStep = memo(
@@ -33,20 +35,14 @@ export const ContactStep = memo(
     name,
     phone,
     email,
-    consent,
     errors,
     status,
     headingRef,
     onNameChange,
     onPhoneChange,
     onEmailChange,
-    onConsentChange,
     onBack,
   }: ContactStepProps) => {
-    const handleConsent = useCallback(
-      (event: ChangeEvent<HTMLInputElement>) => onConsentChange(event.target.checked),
-      [onConsentChange],
-    );
     const submitLabel = hasWeb ? 'Poslať audit zadarmo' : 'Chcem konzultáciu';
     const submitting = status === 'submitting';
 
@@ -95,33 +91,7 @@ export const ContactStep = memo(
             onChange={onPhoneChange}
           />
         </div>
-        <div className={styles.form__consent}>
-          <label className={styles['form__consent-label']}>
-            <input
-              type="checkbox"
-              checked={consent}
-              required
-              data-field="consent"
-              aria-invalid={errors.consent ? true : undefined}
-              aria-describedby={errors.consent ? 'consent-error' : undefined}
-              onChange={handleConsent}
-              className={styles['form__consent-box']}
-            />
-            <span>
-              Súhlasím so{' '}
-              <a href={SITE.privacyUrl} target="_blank" rel="noopener" className={styles.form__link}>
-                spracovaním osobných údajov
-              </a>{' '}
-              za účelom prípravy auditu. Žiadny newsletter, žiadny spam.
-            </span>
-          </label>
-          {errors.consent && (
-            <span id="consent-error" className={styles.form__error}>
-              {errors.consent}
-            </span>
-          )}
-        </div>
-        {(status === 'error' || status === 'already-subscribed') && <SubmitAlert kind={status} />}
+        {isAlert(status) && <SubmitAlert kind={status} />}
         <div className={styles['form__nav--wrap']}>
           <button type="button" className={styles.form__back} onClick={onBack}>
             Späť
@@ -131,6 +101,14 @@ export const ContactStep = memo(
             <ArrowIcon />
           </button>
         </div>
+        <p className={styles.form__notice}>
+          Údaje použijem len na prípravu {hasWeb ? 'auditu' : 'konzultácie'} a komunikáciu o ňom. Žiadny newsletter,
+          žiadny spam. Viac v{' '}
+          <a href={SITE.privacyUrl} target="_blank" rel="noopener" className={styles.form__link}>
+            zásadách ochrany osobných údajov
+          </a>
+          .
+        </p>
       </fieldset>
     );
   },

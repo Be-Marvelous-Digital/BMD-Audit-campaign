@@ -1,6 +1,6 @@
 export type FormStep = 1 | 2 | 3;
 
-export type FieldName = 'business' | 'website' | 'name' | 'email' | 'phone' | 'consent';
+export type FieldName = 'business' | 'website' | 'name' | 'email' | 'phone';
 
 export interface AuditValues {
   business: string;
@@ -10,7 +10,6 @@ export interface AuditValues {
   name: string;
   phone: string;
   email: string;
-  consent: boolean;
 }
 
 export type FieldErrors = Partial<Record<FieldName, string>>;
@@ -33,7 +32,6 @@ export const EMPTY_VALUES: AuditValues = {
   name: '',
   phone: '',
   email: '',
-  consent: false,
 };
 
 export function validateStep(step: FormStep, values: AuditValues): FieldErrors {
@@ -56,7 +54,6 @@ export function validateStep(step: FormStep, values: AuditValues): FieldErrors {
     if (values.phone.trim() && !PHONE_PATTERN.test(values.phone.trim())) {
       errors.phone = 'Telefón zadajte v tvare +421 9xx xxx xxx.';
     }
-    if (!values.consent) errors.consent = 'Bez súhlasu vám audit poslať nemôžem.';
   }
 
   return errors;
@@ -73,6 +70,6 @@ export function buildMessage(values: AuditValues): string {
 }
 
 export function firstErrorField(errors: FieldErrors): FieldName | undefined {
-  const order: FieldName[] = ['business', 'website', 'name', 'email', 'phone', 'consent'];
+  const order: FieldName[] = ['business', 'website', 'name', 'email', 'phone'];
   return order.find((field) => errors[field]);
 }

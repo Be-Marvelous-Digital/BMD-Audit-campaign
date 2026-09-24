@@ -1,0 +1,355 @@
+[     236ms] Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at rX (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:46254)
+    at o6 (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:87962)
+    at iu (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:97841)
+    at sd (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:137985)
+    at http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:132871
+    at se (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:132972)
+    at s$ (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:159536)
+    at MessagePort.O (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:7701)
+[     344ms] [WARNING] WARNING: Multiple instances of Three.js being imported. @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[     591ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[     663ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[    1328ms] [WARNING] updating from  115 to  122 @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[    9822ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/:0
+[   16842ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/:0
+[   17823ms] Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at rX (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:46254)
+    at o6 (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:87962)
+    at iu (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:97841)
+    at sd (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:137985)
+    at http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:132871
+    at se (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:132972)
+    at s$ (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:159536)
+    at MessagePort.O (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:7701)
+[   17832ms] [WARNING] WARNING: Multiple instances of Three.js being imported. @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[   17867ms] [WARNING] updating from  115 to  122 @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[   18213ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[   18220ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[   21241ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/:0
+[   23770ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[   26268ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/portfolio/repette:0
+[   32080ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/portfolio/repette:0
+[   64608ms] Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at rX (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:46254)
+    at o6 (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:87962)
+    at iu (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:97841)
+    at sd (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:137985)
+    at http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:132871
+    at se (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:132972)
+    at s$ (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:159536)
+    at MessagePort.O (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:7701)
+[   64616ms] [WARNING] WARNING: Multiple instances of Three.js being imported. @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[   64648ms] [WARNING] updating from  115 to  122 @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[   64992ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[   64998ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[   68018ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/:0
+[   70416ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[   72918ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/portfolio/repette:0
+[   78882ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/portfolio/repette:0
+[  160874ms] Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at rX (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:46254)
+    at o6 (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:87962)
+    at iu (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:97841)
+    at sd (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:137985)
+    at http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:132871
+    at se (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:132972)
+    at s$ (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:159536)
+    at MessagePort.O (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:7701)
+[  160879ms] [WARNING] WARNING: Multiple instances of Three.js being imported. @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  160909ms] [WARNING] updating from  115 to  122 @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  161258ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  161264ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  164285ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/:0
+[  166955ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  167935ms] [WARNING] updating from  115 to  122 @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  168032ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  169979ms] Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at rX (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:46254)
+    at o6 (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:87962)
+    at iu (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:97841)
+    at sd (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:137985)
+    at http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:132871
+    at se (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:132972)
+    at s$ (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:159536)
+    at MessagePort.O (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:7701)
+[  170332ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  171503ms] [WARNING] WARNING: Multiple instances of Three.js being imported. @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  171543ms] [WARNING] updating from  115 to  122 @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  171627ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  177012ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/#contact:0
+[  180554ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/#contact:0
+[  221406ms] Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at rX (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:46254)
+    at o6 (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:87962)
+    at iu (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:97841)
+    at sd (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:137985)
+    at http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:132871
+    at se (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:132972)
+    at s$ (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:159536)
+    at MessagePort.O (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:7701)
+[  221411ms] [WARNING] WARNING: Multiple instances of Three.js being imported. @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  221439ms] [WARNING] updating from  115 to  122 @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  221784ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  221792ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  223991ms] Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at rX (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:46254)
+    at o6 (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:87962)
+    at iu (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:97841)
+    at sd (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:137985)
+    at http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:132871
+    at se (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:132972)
+    at s$ (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:159536)
+    at MessagePort.O (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:7701)
+[  223999ms] [WARNING] WARNING: Multiple instances of Three.js being imported. @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  224024ms] [WARNING] updating from  115 to  122 @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  224367ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  224375ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  227393ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/:0
+[  229735ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  230710ms] [WARNING] updating from  115 to  122 @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  230805ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  232736ms] Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at rX (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:46254)
+    at o6 (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:87962)
+    at iu (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:97841)
+    at sd (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:137985)
+    at http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:132871
+    at se (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:132972)
+    at s$ (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:159536)
+    at MessagePort.O (http://localhost:3100/_next/static/chunks/0m_p1bxtorv5i.js:1:7701)
+[  233091ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  234265ms] [WARNING] WARNING: Multiple instances of Three.js being imported. @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  234307ms] [WARNING] updating from  115 to  122 @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  234389ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  237432ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/#contact:0
+[  243313ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/#contact:0
+[  278727ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  278778ms] [LOG] [HMR] connected @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  278867ms] Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+      <LoadingBoundary name="/" loading={null}>
+        <HTTPAccessFallbackBoundary notFound={{...}} forbidden={undefined} unauthorized={undefined}>
+          <HTTPAccessFallbackErrorBoundary pathname="/" notFound={{...}} forbidden={undefined} unauthorized={undefined} ...>
+            <RedirectBoundary>
+              <RedirectErrorBoundary router={{...}}>
+                <InnerLayoutRouter url="/" tree={[...]} params={{locale:"sk"}} cacheNode={{rsc:{...}, ...}} ...>
+                  <SegmentViewNode type="layout" pagePath="[locale]/l...">
+                    <SegmentTrieNode>
+                    <link>
+                    <script>
+                    <script>
+                    <script>
+                    <script>
+                    <LocaleLayout>
+                      <NextIntlClientProviderServer>
+                        <NextIntlClientProvider locale="sk" messages={{nav:{...}, ...}} timeZone="Europe/Bra...">
+                          <IntlProvider locale="sk" messages={{nav:{...}, ...}} timeZone="Europe/Bra...">
+                            <script>
+                            <GoogleAnalytics>
+                            <MetaPixel>
+                            <SceneCanvas>
+                              <div
++                               className="scene-canvas"
+-                               className="cursor__ring"
+                                aria-hidden="true"
+                              >
++                               <Suspense fallback={null}>
+                            ...
+                ...
+
+    at throwOnHydrationMismatch (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3318:56)
+    at updateSuspenseComponent (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6299:99)
+    at beginWork (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6762:24)
+    at runWithFiberInDEV (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopConcurrentByScheduler (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+[  279038ms] [WARNING] WARNING: Multiple instances of Three.js being imported. @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  279175ms] [WARNING] updating from  115 to  122 @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  279509ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  279552ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  282656ms] [WARNING] The resource http://localhost:3101/_next/static/chunks/src_10p-ikz._.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3101/:0
+[  314194ms] [WARNING] The resource http://localhost:3101/_next/static/chunks/src_10p-ikz._.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3101/:0
+[  315173ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  315192ms] [LOG] [HMR] connected @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  315257ms] Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+      <LoadingBoundary name="/" loading={null}>
+        <HTTPAccessFallbackBoundary notFound={{...}} forbidden={undefined} unauthorized={undefined}>
+          <HTTPAccessFallbackErrorBoundary pathname="/" notFound={{...}} forbidden={undefined} unauthorized={undefined} ...>
+            <RedirectBoundary>
+              <RedirectErrorBoundary router={{...}}>
+                <InnerLayoutRouter url="/?b=1" tree={[...]} params={{locale:"sk"}} cacheNode={{rsc:{...}, ...}} ...>
+                  <SegmentViewNode type="layout" pagePath="[locale]/l...">
+                    <SegmentTrieNode>
+                    <link>
+                    <script>
+                    <script>
+                    <script>
+                    <script>
+                    <LocaleLayout>
+                      <NextIntlClientProviderServer>
+                        <NextIntlClientProvider locale="sk" messages={{nav:{...}, ...}} timeZone="Europe/Bra...">
+                          <IntlProvider locale="sk" messages={{nav:{...}, ...}} timeZone="Europe/Bra...">
+                            <script>
+                            <GoogleAnalytics>
+                            <MetaPixel>
+                            <SceneCanvas>
+                              <div
++                               className="scene-canvas"
+-                               className="cursor__ring"
+                                aria-hidden="true"
+                              >
++                               <Suspense fallback={null}>
+                            ...
+                ...
+
+    at throwOnHydrationMismatch (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3318:56)
+    at updateSuspenseComponent (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6299:99)
+    at beginWork (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6762:24)
+    at runWithFiberInDEV (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopConcurrentByScheduler (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+[  315351ms] [WARNING] WARNING: Multiple instances of Three.js being imported. @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  315571ms] [WARNING] updating from  115 to  122 @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  315730ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  315739ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  318808ms] [WARNING] The resource http://localhost:3101/_next/static/chunks/src_10p-ikz._.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3101/?b=1:0
+[  340609ms] [WARNING] The resource http://localhost:3101/_next/static/chunks/src_10p-ikz._.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3101/?b=1:0
+[  351613ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  351763ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  356270ms] [WARNING] The resource http://localhost:3101/_next/static/chunks/src_10p-ikz._.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3101/?b=1:0
+[  376111ms] NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+    at removeChild (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:11920:24)
+    at runWithFiberInDEV (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at commitDeletionEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8071:21)
+    at recursivelyTraverseDeletionEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8032:53)
+    at commitDeletionEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8094:17)
+    at recursivelyTraverseDeletionEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8032:53)
+    at commitDeletionEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8105:17)
+    at recursivelyTraverseDeletionEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8032:53)
+    at commitDeletionEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8118:17)
+    at recursivelyTraverseDeletionEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8032:53)
+    at commitDeletionEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8094:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8195:13)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8286:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8403:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8214:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8403:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8403:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8214:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8219:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8214:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8214:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8214:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8214:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8219:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8214:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8214:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8403:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8403:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8214:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8214:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+    at commitMutationEffectsOnFiber (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8403:17)
+    at recursivelyTraverseMutationEffects (http://localhost:3101/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:8205:106)
+[  376699ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  376712ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  379282ms] [WARNING] The resource http://localhost:3101/_next/static/chunks/src_10p-ikz._.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3101/?b=1:0
+[  389762ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  389777ms] [LOG] [HMR] connected @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  389888ms] [WARNING] WARNING: Multiple instances of Three.js being imported. @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  390170ms] [WARNING] updating from  115 to  122 @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  390304ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  390317ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  393391ms] [WARNING] The resource http://localhost:3101/_next/static/chunks/src_10p-ikz._.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3101/?b=2:0
+[  397458ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  397470ms] [LOG] [HMR] connected @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  397892ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  400908ms] [WARNING] The resource http://localhost:3101/_next/static/chunks/src_10p-ikz._.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3101/privacy-policy:0
+[  425374ms] [WARNING] The resource http://localhost:3101/_next/static/chunks/src_10p-ikz._.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3101/privacy-policy:0
+[  434704ms] [ERROR] WebSocket connection to 'ws://localhost:3101/_next/webpack-hmr?id=i0yaPw54Jv0oxF0V5GLQE' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[  435707ms] [ERROR] WebSocket connection to 'ws://localhost:3101/_next/webpack-hmr?id=i0yaPw54Jv0oxF0V5GLQE' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[  436708ms] [ERROR] WebSocket connection to 'ws://localhost:3101/_next/webpack-hmr?id=i0yaPw54Jv0oxF0V5GLQE' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[  437711ms] [ERROR] WebSocket connection to 'ws://localhost:3101/_next/webpack-hmr?id=i0yaPw54Jv0oxF0V5GLQE' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[  438712ms] [ERROR] WebSocket connection to 'ws://localhost:3101/_next/webpack-hmr?id=i0yaPw54Jv0oxF0V5GLQE' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[  443716ms] [ERROR] WebSocket connection to 'ws://localhost:3101/_next/webpack-hmr?id=i0yaPw54Jv0oxF0V5GLQE' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[  448718ms] [ERROR] WebSocket connection to 'ws://localhost:3101/_next/webpack-hmr?id=i0yaPw54Jv0oxF0V5GLQE' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[  453721ms] [ERROR] WebSocket connection to 'ws://localhost:3101/_next/webpack-hmr?id=i0yaPw54Jv0oxF0V5GLQE' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[  458723ms] [ERROR] WebSocket connection to 'ws://localhost:3101/_next/webpack-hmr?id=i0yaPw54Jv0oxF0V5GLQE' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[  463726ms] [ERROR] WebSocket connection to 'ws://localhost:3101/_next/webpack-hmr?id=i0yaPw54Jv0oxF0V5GLQE' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3101/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[  465309ms] [WARNING] WARNING: Multiple instances of Three.js being imported. @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  465322ms] [WARNING] updating from  115 to  122 @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  465677ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  465684ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  468706ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/:0
+[  470914ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  473444ms] [WARNING] updating from  115 to  122 @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  473534ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  476870ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  483060ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/portfolio/helgeheim:0
+[  489118ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/portfolio/helgeheim:0
+[  493485ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  494634ms] [WARNING] WARNING: Multiple instances of Three.js being imported. @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  494674ms] [WARNING] updating from  115 to  122 @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  494760ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  497798ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/#contact:0
+[  503681ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/#contact:0
+[  536367ms] [WARNING] WARNING: Multiple instances of Three.js being imported. @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  536380ms] [WARNING] updating from  115 to  122 @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  536733ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  536740ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  539757ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/:0
+[  541997ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  542989ms] [WARNING] updating from  115 to  122 @ http://localhost:3100/_next/static/chunks/17fqje8h9hlzc.js:3138
+[  543060ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/0ruqtfk_z0afr.js:0
+[  550475ms] [WARNING] The resource http://localhost:3100/_next/static/chunks/0.kvi2nz7qa1b.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3100/#contact:0

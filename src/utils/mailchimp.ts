@@ -1,4 +1,4 @@
-export type SubscribeOutcome = 'success' | 'already-subscribed' | 'error';
+export type SubscribeOutcome = 'success' | 'already-subscribed' | 'invalid-email' | 'rate-limited' | 'error';
 
 interface MailchimpResponse {
   result: 'success' | 'error';
@@ -16,7 +16,10 @@ export function toJsonpUrl(action: string, fields: Record<string, string>, callb
 
 export function classifyResponse(response: MailchimpResponse): SubscribeOutcome {
   if (response.result === 'success') return 'success';
-  return /already subscribed/i.test(response.msg) ? 'already-subscribed' : 'error';
+  if (/already subscribed/i.test(response.msg)) return 'already-subscribed';
+  if (/too many/i.test(response.msg)) return 'rate-limited';
+  if (/e-?mail/i.test(response.msg)) return 'invalid-email';
+  return 'error';
 }
 
 export function subscribe(action: string, fields: Record<string, string>): Promise<SubscribeOutcome> {

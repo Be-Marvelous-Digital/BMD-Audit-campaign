@@ -37,10 +37,8 @@ export const Offer = memo(({ onNoWebClick }: OfferProps) => (
         </Reveal>
         <Reveal delay={2} className={styles.offer__buy}>
           <p className={styles.offer__price}>
-            <span className="visually-hidden">Bežná cena </span>
-            <s className={styles['offer__price-old']}>299 €</s>
-            <span className="visually-hidden">, teraz </span>
             <strong className={styles['offer__price-new']}>0 €</strong>
+            <span className={styles['offer__price-value']}>Hodnota 299 €</span>
             <span className={styles['offer__price-note']}>pre lokálne biznisy zo Slovenska</span>
           </p>
           <div className={styles.offer__actions}>
