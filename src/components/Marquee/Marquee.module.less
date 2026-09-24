@@ -1,0 +1,64 @@
+@import (reference) 'global';
+
+.marquee {
+  overflow: hidden;
+  padding-block: 22px;
+  background: @color-night-raised;
+  border-block: 1px solid rgba(255, 255, 255, 0.08);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+
+  &__track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 40s linear infinite;
+  }
+
+  &:hover &__track {
+    animation-play-state: paused;
+  }
+
+  @media @motion-reduce {
+    &__track {
+      animation: none;
+      flex-wrap: wrap;
+      width: auto;
+    }
+  }
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: @space-7;
+    padding-right: @space-7;
+    font-family: @font-display;
+    font-weight: @font-weight-bold;
+    font-size: clamp(18px, 2vw, 26px);
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: @color-cream-3;
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background: @color-accent;
+  }
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

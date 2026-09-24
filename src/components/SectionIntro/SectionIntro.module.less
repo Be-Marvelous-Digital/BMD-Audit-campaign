@@ -1,0 +1,66 @@
+@import (reference) 'global';
+@import (reference) 'mixins';
+
+.intro {
+  display: flex;
+  gap: @space-6 @space-8;
+
+  &--split {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &--stack {
+    flex-direction: column;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: @space-4;
+    max-width: 820px;
+    min-width: 0;
+  }
+
+  &__kicker {
+    margin: 0;
+    display: inline-flex;
+    align-items: baseline;
+    gap: @space-3;
+    .kicker();
+  }
+
+  &__index {
+    font-family: @font-mono;
+    font-weight: @font-weight-medium;
+    letter-spacing: 0;
+    color: @color-accent;
+  }
+
+  &__title {
+    .heading-2();
+    color: @color-ink;
+  }
+
+  &__lead {
+    .lead();
+  }
+
+  &--dark &__kicker {
+    color: @color-cream-3;
+  }
+
+  &--dark &__index {
+    color: @color-accent-bright;
+  }
+
+  &--dark &__title {
+    color: @color-cream;
+  }
+
+  &--dark &__lead {
+    color: @color-cream-2;
+    line-height: @line-height-body-dark;
+  }
+}

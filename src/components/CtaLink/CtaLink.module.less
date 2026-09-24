@@ -1,0 +1,124 @@
+@import (reference) 'global';
+
+.cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: @space-3;
+  min-height: 48px;
+  border: 2px solid transparent;
+  border-radius: @radius-pill;
+  font-weight: @font-weight-semibold;
+  letter-spacing: @tracking-wide;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color @duration-base @ease-out,
+    color @duration-base @ease-out,
+    border-color @duration-base @ease-out,
+    box-shadow @duration-base @ease-out,
+    transform @duration-base @ease-out;
+
+  &:active {
+    transform: translateY(1px) scale(0.98);
+  }
+
+  &__label {
+    position: relative;
+  }
+
+  &__arrow {
+    position: relative;
+    flex: none;
+    transition: transform @duration-base @ease-out;
+  }
+
+  &:hover &__arrow {
+    transform: translateX(3px);
+  }
+
+  &--sm {
+    min-height: 40px;
+    padding: 10px 20px;
+    font-size: @font-size-2xs;
+  }
+
+  &--md {
+    padding: 14px 28px;
+    font-size: @font-size-xs;
+  }
+
+  &--lg {
+    min-height: 58px;
+    padding: 18px 32px;
+    font-size: @font-size-sm;
+  }
+
+  &--primary {
+    background: @color-accent;
+    border-color: @color-accent;
+    color: @color-cream;
+
+    &:hover {
+      background: @color-accent-hover;
+      border-color: @color-accent-hover;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 36px @color-accent-shadow;
+    }
+  }
+
+  &--outline-light {
+    border-color: @color-cream-line-strong;
+    color: @color-cream;
+
+    &:hover {
+      background: @color-cream;
+      border-color: @color-cream;
+      color: @color-ink;
+    }
+  }
+
+  &--outline-dark {
+    border-color: @color-ink;
+    color: @color-ink;
+
+    &:hover {
+      background: @color-ink;
+      color: @color-cream;
+    }
+  }
+
+  &--shine {
+    box-shadow: 0 10px 40px @color-accent-shadow;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 40%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+      transform: translateX(-120%) skewX(-20deg);
+      animation: cta-sheen 3.6s @ease-in-out 1.6s infinite;
+      pointer-events: none;
+    }
+  }
+
+  @media @bp-sm {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@keyframes cta-sheen {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  60%,
+  100% {
+    transform: translateX(320%) skewX(-20deg);
+  }
+}

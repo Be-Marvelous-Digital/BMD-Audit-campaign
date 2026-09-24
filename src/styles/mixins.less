@@ -1,0 +1,80 @@
+@import (reference) 'global';
+
+.container(@max: @container-max) {
+  width: 100%;
+  max-width: @max;
+  margin-inline: auto;
+  padding-inline: @space-gutter;
+}
+
+.section-pad() {
+  padding-block: @space-section;
+}
+
+.kicker(@color: @color-ink-3) {
+  font-size: @font-size-2xs;
+  font-weight: @font-weight-semibold;
+  letter-spacing: @tracking-widest;
+  text-transform: uppercase;
+  color: @color;
+}
+
+.heading-2() {
+  margin: 0;
+  font-family: @font-display;
+  font-weight: @font-weight-bold;
+  font-size: @font-size-h2;
+  line-height: @line-height-tight;
+  letter-spacing: @tracking-tight;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+.lead(@color: @color-ink-2) {
+  margin: 0;
+  max-width: 46ch;
+  font-size: @font-size-md;
+  line-height: @line-height-body;
+  color: @color;
+  text-wrap: pretty;
+}
+
+.callout() {
+  font-family: @font-display;
+  font-weight: @font-weight-semibold;
+  font-size: @font-size-callout;
+  line-height: @line-height-snug;
+  letter-spacing: @tracking-snug;
+  text-wrap: pretty;
+}
+
+.split-grid(@min: 440px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, @min), 1fr));
+  gap: @space-split;
+  align-items: center;
+}
+
+.pill-tag(@color: @color-ink-2; @border: @color-rule-strong) {
+  display: inline-block;
+  padding: 5px 11px;
+  border: 1px solid @border;
+  border-radius: @radius-pill;
+  font-size: @font-size-2xs;
+  color: @color;
+}
+
+.focus-ring(@offset: 3px) {
+  outline: 2px solid @color-accent-bright;
+  outline-offset: @offset;
+}
+
+.visually-hidden() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
