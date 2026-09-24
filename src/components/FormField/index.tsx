@@ -15,6 +15,8 @@ interface FormFieldProps {
   error?: string;
   required?: boolean;
   optional?: boolean;
+  multiline?: boolean;
+  maxLength?: number;
 }
 
 export const FormField = memo(
@@ -32,12 +34,29 @@ export const FormField = memo(
     error,
     required = false,
     optional = false,
+    multiline = false,
+    maxLength,
   }: FormFieldProps) => {
     const id = useId();
     const hintId = `${id}-hint`;
     const errorId = `${id}-error`;
     const describedBy = [hint && hintId, error && errorId].filter(Boolean).join(' ') || undefined;
-    const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>) => onChange(event.target.value), [onChange]);
+    const handleChange = useCallback(
+      (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => onChange(event.target.value),
+      [onChange],
+    );
+    const sharedProps = {
+      id,
+      name,
+      placeholder,
+      value,
+      required,
+      maxLength,
+      'aria-invalid': error ? true : undefined,
+      'aria-describedby': describedBy,
+      'data-field': field,
+      onChange: handleChange,
+    };
 
     return (
       <div className={[styles.field, error && styles['field--error']].filter(Boolean).join(' ')}>
@@ -45,21 +64,17 @@ export const FormField = memo(
           {label}
           {optional && <span className={styles.field__optional}> (nepovinné)</span>}
         </label>
-        <input
-          id={id}
-          name={name}
-          type={type}
-          inputMode={inputMode}
-          autoComplete={autoComplete}
-          placeholder={placeholder}
-          value={value}
-          required={required}
-          aria-invalid={error ? true : undefined}
-          aria-describedby={describedBy}
-          data-field={field}
-          onChange={handleChange}
-          className={styles.field__input}
-        />
+        {multiline ? (
+          <textarea {...sharedProps} rows={4} className={[styles.field__input, styles['field__input--multiline']].join(' ')} />
+        ) : (
+          <input
+            {...sharedProps}
+            type={type}
+            inputMode={inputMode}
+            autoComplete={autoComplete}
+            className={styles.field__input}
+          />
+        )}
         {hint && (
           <span id={hintId} className={styles.field__hint}>
             {hint}
