@@ -27,7 +27,7 @@ export const FormSuccess = memo(({ name, hasWeb }: FormSuccessProps) => {
       </h3>
       <p className={styles.success__text}>
         {hasWeb
-          ? 'Váš web mám v rade. Do 48 hodín vám pošlem osobné video s auditom a 3 rýchlymi opravami.'
+          ? 'Váš web mám v rade. Do 48 hodín vám pošlem písomný audit s akčným plánom a 3 rýchlymi opravami.'
           : 'Ozvem sa vám do 24 hodín a dohodneme si 20 minút, ktoré vám sadnú.'}
       </p>
       <p className={styles.success__tip}>

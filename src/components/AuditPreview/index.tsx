@@ -1,6 +1,5 @@
 import { memo, useRef, type CSSProperties } from 'react';
-import avatarUrl from '../../assets/images/peter-avatar.webp';
-import { auditQuickFixes, auditScores } from '../../data/content';
+import { auditFinding, auditQuickFixes, auditScores } from '../../data/content';
 import { useInView } from '../../hooks/useInView';
 import styles from './AuditPreview.module.less';
 
@@ -15,18 +14,35 @@ export const AuditPreview = memo(() => {
         <span className={styles.preview__site}>barbershop-kings.sk</span>
         <span className={styles.preview__badge}>Doručené za 31 h</span>
       </figcaption>
-      <div className={styles.video} aria-hidden="true">
-        <div className={styles.video__grid} />
-        <span className={styles.video__play}>
-          <svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round">
-            <path d="M5 3.5v9l7.5-4.5z" />
-          </svg>
-        </span>
-        <div className={styles.video__meta}>
-          <span className={styles.video__title}>Váš osobný video audit</span>
-          <span className={styles.video__time}>12:48</span>
+      <div className={styles.report} aria-hidden="true">
+        <div className={styles.report__head}>
+          <span>{auditFinding.page}</span>
+          <span className={styles.report__severity}>{auditFinding.severity}</span>
         </div>
-        <img src={avatarUrl} alt="" width={84} height={84} loading="lazy" decoding="async" className={styles.video__avatar} />
+        <span className={styles.report__area}>{auditFinding.area}</span>
+        <p className={styles.report__title}>{auditFinding.title}</p>
+        <div className={styles.report__block}>
+          <span className={styles.report__label}>Diagnóza</span>
+          <p className={styles.report__text}>{auditFinding.diagnosis}</p>
+        </div>
+        <div className={[styles.report__block, styles['report__block--fix']].join(' ')}>
+          <span className={styles.report__label}>Riešenie</span>
+          <ol className={styles.report__steps}>
+            {auditFinding.steps.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ol>
+        </div>
+        <dl className={styles.report__facts}>
+          <div>
+            <dt>Náročnosť</dt>
+            <dd>{auditFinding.effort}</dd>
+          </div>
+          <div>
+            <dt>Výsledok</dt>
+            <dd>{auditFinding.impact}</dd>
+          </div>
+        </dl>
       </div>
       <ul className={styles.scores}>
         {auditScores.map((score, index) => (

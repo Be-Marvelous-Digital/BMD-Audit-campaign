@@ -65,7 +65,7 @@ export const industries: string[] = [
 
 export const heroStats: Stat[] = [
   { value: '30\u00a0s', label: 'vyplnenie formulára' },
-  { value: '48\u00a0h', label: 'osobné video' },
+  { value: '48\u00a0h', label: 'písomný audit' },
   { value: '10', label: 'auditov týždenne, robím ich sám' },
 ];
 
@@ -112,7 +112,8 @@ export const leaks: Leak[] = [
 ];
 
 export const offerIncludes: string[] = [
-  'Osobné video 10 až 15 minút, v ktorom prechádzam váš web ako zákazník',
+  'Písomný audit ľudskou rečou, zrozumiteľný aj bez znalosti techniky',
+  'Jasný akčný plán: čo opraviť ako prvé, čo potom a prečo',
   'Skóre v 5 oblastiach: nájditeľnosť, rýchlosť, dôvera, akcia, prvý dojem',
   '3 rýchle opravy, ktoré zvládnete aj sami ešte tento týždeň',
   'Porovnanie s 2 konkurentmi vo vašom meste',
@@ -126,6 +127,18 @@ export const auditScores: AuditScore[] = [
   { label: 'Akcia', value: 35, tone: 'warn' },
   { label: 'Prvý dojem', value: 64, tone: 'good' },
 ];
+
+export const auditFinding = {
+  page: 'Strana 3 / 8',
+  area: '02 · Rýchlosť',
+  severity: 'Kritické',
+  title: 'Na mobile sa web načíta za 6,4 s',
+  diagnosis:
+    'Fotky na úvode majú spolu 5,2 MB. Viac ako polovica ľudí odíde skôr, ako uvidí, čo ponúkate.',
+  steps: ['Zmenšiť 3 úvodné fotky (návod na strane 7)', 'Presunúť galériu nižšie na stránke'],
+  effort: '20 minút',
+  impact: 'o 4,1 s rýchlejšie',
+};
 
 export const auditQuickFixes: string[] = [
   'Pridať tlačidlo Zavolať do hlavičky',
@@ -175,8 +188,8 @@ export const processSteps: ProcessStep[] = [
   },
   {
     number: '03',
-    title: 'Dostanete video',
-    description: 'Krátke, zrozumiteľné, s konkrétnymi krokmi. Pozriete si ho, kedy chcete.',
+    title: 'Dostanete písomný audit',
+    description: 'Zrozumiteľný aj bez znalosti techniky, s jasným plánom krokov. Prečítate si ho, kedy chcete.',
     time: 'Do 48 hodín',
   },
   {
@@ -214,7 +227,7 @@ export const faqs: Faq[] = [
   {
     question: 'Budete mi potom volať a niečo tlačiť?',
     answer:
-      'Nie. Pošlem video a zhrnutie. Ďalší krok je čisto na vás. Ak sa neozvete, pošlem jednu pripomienku po týždni a to je všetko.',
+      'Nie. Pošlem písomný audit s akčným plánom. Ďalší krok je čisto na vás. Ak sa neozvete, pošlem jednu pripomienku po týždni a to je všetko.',
   },
   {
     question: 'Nemám web, len Instagram alebo Facebook.',
@@ -224,12 +237,12 @@ export const faqs: Faq[] = [
   {
     question: 'Ako rýchlo dostanem výsledok?',
     answer:
-      'Formulár zaberie 30 sekúnd. Video posielam do 48 hodín v pracovných dňoch. Pri vysokom záujme vám dám vedieť presný termín.',
+      'Formulár zaberie 30 sekúnd. Audit posielam do 48 hodín v pracovných dňoch. Pri vysokom záujme vám dám vedieť presný termín.',
   },
   {
     question: 'Nerozumiem technike. Pochopím to?',
     answer:
-      'Áno. Audit je v slovenčine, bez odborných skratiek. Ukážem vám to priamo na obrazovke, tak ako to vidí váš zákazník.',
+      'Áno. Audit píšem po slovensky, ľudskou rečou, bez odborných skratiek. Pri každom probléme vysvetlím, prečo vám berie zákazníkov, a napíšem konkrétny krok, ako ho opraviť.',
   },
   {
     question: 'Robíte audit aj pre e-shopy?',

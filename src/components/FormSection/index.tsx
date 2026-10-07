@@ -22,7 +22,7 @@ export const FormSection = memo(({ sectionRef, hasWeb, onHasWebChange }: FormSec
           Zistite, čo vám berie zákazníkov.
         </h2>
         <p className={styles.section__lead}>
-          Tri krátke kroky. Žiadne platobné údaje. Video vám príde e-mailom alebo na WhatsApp do 48 hodín.
+          Tri krátke kroky. Žiadne platobné údaje. Audit vám príde e-mailom alebo na WhatsApp do 48 hodín.
         </p>
         <aside className={styles.guarantee} aria-labelledby="guarantee-title">
           <h3 id="guarantee-title" className={styles.guarantee__title}>
