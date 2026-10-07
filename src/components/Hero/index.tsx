@@ -24,7 +24,7 @@ export const Hero = memo(({ sectionRef, onNoWebClick }: HeroProps) => (
         </h1>
         <p className={styles.hero__lead}>
           Osobne prejdem váš web aj Google profil tak, ako ho vidí váš zákazník na mobile. Do 48 hodín vám pošlem
-          krátke video: čo vám berie zákazníkov a ako to opraviť.{' '}
+          písomný audit: čo vám berie zákazníkov a jasný plán, ako to opraviť krok za krokom.{' '}
           <strong>Zadarmo. Bez záväzkov. Bez predajcu.</strong>
         </p>
         <div className={styles.hero__actions}>

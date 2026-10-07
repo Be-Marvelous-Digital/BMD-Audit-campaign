@@ -20,7 +20,7 @@ export const Offer = memo(({ onNoWebClick }: OfferProps) => (
           index="03"
           kicker="Riešenie"
           title="Audit 5 bodov. Zadarmo."
-          lead="Žiadny automatický report s 80 stranami grafov. Osobné video, v ktorom váš web prejdem očami zákazníka a poviem vám po slovensky, čo opraviť ako prvé."
+          lead="Žiadny automatický report s 80 stranami grafov. Osobný písomný audit, v ktorom váš web prejdem očami zákazníka a ľudskou rečou vám napíšem, čo opraviť ako prvé. Pochopíte ho, aj keď sa v technike nevyznáte."
           layout="stack"
         />
         <Reveal delay={1}>
