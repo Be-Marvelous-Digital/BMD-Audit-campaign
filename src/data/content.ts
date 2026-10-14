@@ -1,31 +1,13 @@
 import workPohoda from '../assets/images/work-pohoda.webp';
-import workKidsArena from '../assets/images/work-kidsarena.webp';
 import workEyesOpen from '../assets/images/work-eyesopen.webp';
+import workLeaderm from '../assets/images/work-leaderm.webp';
+import workLeone from '../assets/images/work-leone.webp';
+import workMnam from '../assets/images/work-mnam.webp';
 
-export interface Leak {
-  number: string;
-  title: string;
-  description: string;
-  tag: string;
-}
-
-export interface JourneyStep {
-  number: string;
-  title: string;
-  description: string;
-  tools: string[];
-}
-
-export interface ProcessStep {
-  number: string;
-  title: string;
-  description: string;
+export interface Step {
   time: string;
-}
-
-export interface Stat {
-  value: string;
-  label: string;
+  title: string;
+  description: string;
 }
 
 export interface WorkItem {
@@ -33,6 +15,8 @@ export interface WorkItem {
   name: string;
   category: string;
   alt: string;
+  width: number;
+  height: number;
 }
 
 export interface Faq {
@@ -40,216 +24,164 @@ export interface Faq {
   answer: string;
 }
 
-export type AuditTone = 'bad' | 'warn' | 'good';
-
-export interface AuditScore {
+export interface Option {
+  value: string;
   label: string;
-  value: number;
-  tone: AuditTone;
+  description?: string;
 }
 
-export const industries: string[] = [
-  'Kaderníctva',
-  'Barbershopy',
-  'Kozmetické salóny',
-  'Nechtové štúdiá',
-  'Masáže',
-  'Elektrikári',
-  'Stolári',
-  'Inštalatéri',
-  'Autoservisy',
-  'Maliari',
-  'Fotografi',
-  'Tetovacie štúdiá',
-];
+export interface StyleOption extends Option {
+  swatch: [string, string, string];
+  sample: 'clean' | 'bold' | 'warm' | 'elegant' | 'playful' | 'open';
+}
 
-export const heroStats: Stat[] = [
-  { value: '30\u00a0s', label: 'vyplnenie formulára' },
-  { value: '48\u00a0h', label: 'písomný audit' },
-  { value: '10', label: 'auditov týždenne, robím ich sám' },
-];
+export const WEEKLY_CAPACITY = 5;
 
-export const heroIssues = [
-  { label: 'Načítanie', detail: '6,4 s', tone: 'bad' },
-  { label: 'Chýba tlačidlo Zavolať', tone: 'bad' },
-  { label: 'Bez online rezervácie', tone: 'warn' },
-  { label: 'Nie ste v Mapách', tone: 'bad' },
-] as const;
-
-export const leaks: Leak[] = [
+export const steps: Step[] = [
   {
-    number: '01',
-    title: 'Nenájdu vás.',
-    description:
-      'Zákazník hľadá „barbershop Nitra“. Vy ste na druhej strane Google a v Mapách chýbate. Tam sa nepozerá nikto.',
-    tag: 'Nájditeľnosť',
-  },
-  {
-    number: '02',
-    title: 'Nedočkajú sa.',
-    description:
-      'Viac ako polovica ľudí na mobile odíde, ak sa stránka načítava dlhšie ako 3 sekundy. Kliknú na ďalší výsledok.',
-    tag: 'Rýchlosť',
-  },
-  {
-    number: '03',
-    title: 'Neveria vám.',
-    description: 'Cenník z roku 2019, žiadne recenzie, fotky z telefónu. Zákazník nevie, či ešte fungujete.',
-    tag: 'Dôvera',
-  },
-  {
-    number: '04',
-    title: 'Nevedia, čo ďalej.',
-    description: 'Číslo schované v pätičke, žiadna rezervácia. Každý klik navyše je zákazník, ktorý to vzdá.',
-    tag: 'Akcia',
-  },
-  {
-    number: '05',
-    title: 'Zabudnú na vás.',
-    description: 'Web vyzerá ako tisíc iných. Nič, čo by si zapamätali alebo poslali priateľovi.',
-    tag: 'Prvý dojem',
-  },
-];
-
-export const offerIncludes: string[] = [
-  'Písomný audit ľudskou rečou, zrozumiteľný aj bez znalosti techniky',
-  'Jasný akčný plán: čo opraviť ako prvé, čo potom a prečo',
-  'Skóre v 5 oblastiach: nájditeľnosť, rýchlosť, dôvera, akcia, prvý dojem',
-  '3 rýchle opravy, ktoré zvládnete aj sami ešte tento týždeň',
-  'Porovnanie s 2 konkurentmi vo vašom meste',
-  'Žiadny záväzok. Žiadny telefonát, ak ho nechcete',
-];
-
-export const auditScores: AuditScore[] = [
-  { label: 'Nájditeľnosť', value: 42, tone: 'bad' },
-  { label: 'Rýchlosť', value: 28, tone: 'bad' },
-  { label: 'Dôvera', value: 71, tone: 'good' },
-  { label: 'Akcia', value: 35, tone: 'warn' },
-  { label: 'Prvý dojem', value: 64, tone: 'good' },
-];
-
-export const auditFinding = {
-  page: 'Strana 3 / 8',
-  area: '02 · Rýchlosť',
-  severity: 'Kritické',
-  title: 'Na mobile sa web načíta za 6,4 s',
-  diagnosis:
-    'Fotky na úvode majú spolu 5,2 MB. Viac ako polovica ľudí odíde skôr, ako uvidí, čo ponúkate.',
-  steps: ['Zmenšiť 3 úvodné fotky (návod na strane 7)', 'Presunúť galériu nižšie na stránke'],
-  effort: '20 minút',
-  impact: 'o 4,1 s rýchlejšie',
-};
-
-export const auditQuickFixes: string[] = [
-  'Pridať tlačidlo Zavolať do hlavičky',
-  'Doplniť otváracie hodiny do Google profilu',
-  'Zmenšiť fotky na úvode (−4,1 s)',
-];
-
-export const journey: JourneyStep[] = [
-  {
-    number: '01',
-    title: 'Nájdu vás.',
-    description: 'Keď niekto hľadá vašu službu vo vašom meste, ste medzi prvými.',
-    tools: ['Google profil', 'Mapy', 'Lokálne SEO'],
-  },
-  {
-    number: '02',
-    title: 'Uveria vám.',
-    description: 'Za pár sekúnd pochopia, čo robíte, za koľko a prečo práve vy.',
-    tools: ['Web', 'Recenzie', 'Skutočné fotky'],
-  },
-  {
-    number: '03',
-    title: 'Ozvú sa.',
-    description: 'Zavolať, napísať alebo rezervovať termín je na jeden klik.',
-    tools: ['Online rezervácie', 'WhatsApp', 'Dopytový formulár'],
-  },
-  {
-    number: '04',
-    title: 'Vrátia sa.',
-    description: 'Spokojný zákazník príde znova a odporučí vás ďalej.',
-    tools: ['Pripomienky', 'Žiadosť o recenziu', 'Stáli klienti'],
-  },
-];
-
-export const processSteps: ProcessStep[] = [
-  {
-    number: '01',
+    time: '3 minúty',
     title: 'Vyplníte formulár',
-    description: 'Typ biznisu, adresa webu a kontakt. Nič viac.',
-    time: '30 sekúnd',
+    description: 'Adresa webu, čo chcete zmeniť a aký štýl sa vám páči. Čím presnejšie odpoviete, tým presnejší bude návrh.',
   },
   {
-    number: '02',
-    title: 'Pozriem sa na váš web',
-    description: 'Osobne, na mobile aj počítači. Skontrolujem aj Google profil a konkurenciu.',
-    time: 'Do 24 hodín',
+    time: 'Do 72 hodín',
+    title: 'Navrhnem novú úvodnú stránku',
+    description:
+      'Na vašich textoch, fotkách a farbách, nie na šablóne s vymysleným textom. Ak web nemáte, vychádzam z Instagramu alebo Google profilu.',
   },
   {
-    number: '03',
-    title: 'Dostanete písomný audit',
-    description: 'Zrozumiteľný aj bez znalosti techniky, s jasným plánom krokov. Prečítate si ho, kedy chcete.',
-    time: 'Do 48 hodín',
+    time: '1 odkaz',
+    title: 'Pošlem vám náhľad',
+    description: 'Otvoríte ho na mobile aj počítači a môžete ho ukázať partnerovi alebo kolegom.',
   },
   {
-    number: '04',
-    title: 'Rozhodnete sa sami',
-    description: 'Opravíte si to sami, dáte to svojmu webárovi, alebo mi napíšete. Žiadne dotieranie.',
     time: 'Bez záväzkov',
+    title: 'Rozhodnete sa vy',
+    description: 'Ak sa vám páči, poviem vám cenu a termín celého webu. Ak nie, rozlúčime sa. Žiadne dotieranie.',
   },
-];
-
-export const aboutStats: Stat[] = [
-  { value: '50+', label: 'projektov' },
-  { value: '8+', label: 'rokov praxe' },
-  { value: '100\u00a0%', label: 'priama komunikácia' },
-  { value: '48\u00a0h', label: 'odozva' },
 ];
 
 export const work: WorkItem[] = [
-  { image: workPohoda, name: 'Pizza Pohoda', category: 'Gastro', alt: 'Úvodná stránka webu pizzerie Pizza Pohoda' },
   {
-    image: workKidsArena,
-    name: 'Kids Arena',
-    category: 'Voľný čas',
-    alt: 'Úvodná stránka webu detského centra Kids Arena',
+    image: workPohoda,
+    name: 'Pizza Pohoda',
+    category: 'Gastro',
+    alt: 'Úvodná stránka webu pizzerie Pizza Pohoda',
+    width: 1200,
+    height: 753,
   },
-  { image: workEyesOpen, name: 'Eyes Open', category: 'Služby', alt: 'Úvodná stránka webu optiky Eyes Open' },
+  {
+    image: workLeaderm,
+    name: 'Leaderm',
+    category: 'Kožná ambulancia',
+    alt: 'Úvodná stránka webu kožnej ambulancie Leaderm v Galante',
+    width: 1200,
+    height: 748,
+  },
+  {
+    image: workMnam,
+    name: 'Mňam Mňam',
+    category: 'Donáška jedla',
+    alt: 'Úvodná stránka webu donášky pizze a burgrov Mňam Mňam Sabinov',
+    width: 1200,
+    height: 753,
+  },
+  {
+    image: workLeone,
+    name: 'Leone',
+    category: 'Reštaurácia',
+    alt: 'Úvodná stránka webu reštaurácie Leone Pub & Restaurant v Harichovciach',
+    width: 1200,
+    height: 753,
+  },
+  {
+    image: workEyesOpen,
+    name: 'Eyes Open',
+    category: 'Služby',
+    alt: 'Úvodná stránka webu optiky Eyes Open',
+    width: 1200,
+    height: 880,
+  },
+];
+
+export const fitYes: string[] = [
+  'Máte firmu alebo živnosť a o webe rozhodujete vy.',
+  'Váš web je zastaraný, pomalý alebo vám nenosí dopyty.',
+  'Web ešte nemáte a Instagram či Google profil už nestačia.',
+  'Nový web chcete riešiť v najbližších mesiacoch.',
+];
+
+export const fitNo: string[] = [
+  'Hľadáte e-shop so stovkami produktov.',
+  'Chcete návrh len ako podklad pre iného dodávateľa.',
+  'Web potrebujete hotový do zajtra.',
 ];
 
 export const faqs: Faq[] = [
   {
     question: 'Naozaj je to zadarmo? Kde je háčik?',
     answer:
-      'Áno, zadarmo. Háčik je jednoduchý a férový: časť ľudí, ktorým audit pošlem, si potom web alebo úpravy nechá urobiť u mňa. Ak nie, audit je aj tak váš a môžete ho dať komukoľvek.',
+      'Áno, zadarmo. Háčik je férový: dúfam, že sa vám návrh zapáči a celý web vám potom dorobím. Náhľad vás k ničomu nezaväzuje.',
   },
   {
-    question: 'Budete mi potom volať a niečo tlačiť?',
+    question: 'Čo presne dostanem?',
     answer:
-      'Nie. Pošlem písomný audit s akčným plánom. Ďalší krok je čisto na vás. Ak sa neozvete, pošlem jednu pripomienku po týždni a to je všetko.',
+      'Návrh novej úvodnej stránky ako odkaz, ktorý si otvoríte v prehliadači na mobile aj počítači. Nie je to hotový web, ale presne uvidíte, ako by mohol vyzerať.',
   },
   {
-    question: 'Nemám web, len Instagram alebo Facebook.',
+    question: 'Prečo má formulár toľko otázok?',
     answer:
-      'Presne pre vás je bezplatná 20-minútová konzultácia. Pozriem sa na vaše profily a Google a poviem vám, čo by mal web mať, aby sa vám zaplatil.',
+      'Bez nich by som navrhoval naslepo. Z odpovedí viem, čo zachovať, čo zmeniť a aký štýl vám sedí. Zaberie to asi 3 minúty.',
   },
   {
-    question: 'Ako rýchlo dostanem výsledok?',
-    answer:
-      'Formulár zaberie 30 sekúnd. Audit posielam do 48 hodín v pracovných dňoch. Pri vysokom záujme vám dám vedieť presný termín.',
+    question: 'Web nemám, len Instagram alebo Facebook. Môžem?',
+    answer: 'Áno. Návrh pripravím podľa vášho profilu, fotiek a toho, čo napíšete do formulára.',
   },
   {
-    question: 'Nerozumiem technike. Pochopím to?',
-    answer:
-      'Áno. Audit píšem po slovensky, ľudskou rečou, bez odborných skratiek. Pri každom probléme vysvetlím, prečo vám berie zákazníkov, a napíšem konkrétny krok, ako ho opraviť.',
-  },
-  {
-    question: 'Robíte audit aj pre e-shopy?',
-    answer:
-      'Tento audit je navrhnutý pre lokálne služby: salóny, barbershopy, remeselníkov a prevádzky. Pre e-shopy by bol potrebný iný, hlbší rozbor.',
+    question: 'Ako rýchlo náhľad dostanem?',
+    answer: `Do 72 hodín od odoslania. Robím najviac ${WEEKLY_CAPACITY} náhľadov týždenne; ak je týždeň plný, hneď vám napíšem, kedy sa k vám dostanem.`,
   },
 ];
+
+export const goalOptions = (hasWeb: boolean): Option[] => [
+  hasWeb
+    ? { value: 'Vylepšiť súčasný web', label: 'Vylepšiť to, čo mám', description: 'Zachovať logo a farby, len moderne a prehľadne' }
+    : { value: 'Držať sa mojej značky', label: 'Držať sa mojej značky', description: 'Logo, farby a štýl z môjho profilu' },
+  { value: 'Úplne nový dizajn', label: 'Úplne nový dizajn', description: 'Nový vzhľad od základu' },
+  { value: 'Neviem, poraďte', label: 'Neviem, poraďte', description: 'Navrhnite, čo dáva zmysel' },
+];
+
+export const styleOptions: StyleOption[] = [
+  { value: 'Čistý a minimalistický', label: 'Čistý', description: 'Veľa priestoru, málo farieb', swatch: ['#f4f3ef', '#1c1c1a', '#9a9a94'], sample: 'clean' },
+  { value: 'Odvážny a výrazný', label: 'Odvážny', description: 'Veľké písmo, silné farby', swatch: ['#111111', '#ff5a1f', '#f2f2f2'], sample: 'bold' },
+  { value: 'Teplý a prírodný', label: 'Teplý', description: 'Zemité tóny, mäkké tvary', swatch: ['#efe4d2', '#7a5a3a', '#5f7a52'], sample: 'warm' },
+  { value: 'Elegantný a prémiový', label: 'Elegantný', description: 'Pokoj, detail, luxus', swatch: ['#16181d', '#c8a96a', '#e9e5dc'], sample: 'elegant' },
+  { value: 'Hravý a farebný', label: 'Hravý', description: 'Farby, energia, úsmev', swatch: ['#ffd23f', '#3a86ff', '#ff4f8b'], sample: 'playful' },
+  { value: 'Nechám na vás', label: 'Nechám na vás', description: 'Prekvapte ma', swatch: ['#2448ff', '#f7f4ee', '#0d0d0b'], sample: 'open' },
+];
+
+export const keepOptions: string[] = ['Logo', 'Farby', 'Texty', 'Fotky', 'Členenie stránok'];
+
+export const painOptions = (hasWeb: boolean): string[] =>
+  hasWeb
+    ? [
+        'Vyzerá zastarano',
+        'Zle sa používa na mobile',
+        'Je pomalý',
+        'Nenosí dopyty ani telefonáty',
+        'Ťažko sa upravuje',
+        'Nesedí k našej značke',
+        'Chýba online rezervácia',
+        'Ľudia nenájdu, čo hľadajú',
+      ]
+    : [
+        'Instagram už nestačí',
+        'Konkurencia web má',
+        'Chcem rezervácie online',
+        'Chcem pôsobiť profesionálnejšie',
+        'Chcem, aby ma našli v Google',
+        'Chcem ukázať ponuku a cenník',
+      ];
 
 export const businessTypes: string[] = [
   'Beauty a starostlivosť',
@@ -259,5 +191,18 @@ export const businessTypes: string[] = [
   'Gastro a ubytovanie',
   'Služby pre domácnosť',
   'Vzdelávanie a kurzy',
-  'Iné lokálne služby',
+  'Iné služby',
+];
+
+export const timelineOptions: Option[] = [
+  { value: 'Čo najskôr', label: 'Čo najskôr' },
+  { value: 'Do 3 mesiacov', label: 'Do 3 mesiacov' },
+  { value: 'Tento rok', label: 'Tento rok' },
+  { value: 'Len sa rozhliadam', label: 'Len sa rozhliadam' },
+];
+
+export const roleOptions: Option[] = [
+  { value: 'Rozhodujem sám/sama', label: 'Áno, rozhodujem ja' },
+  { value: 'Rozhodujem s niekým', label: 'Rozhodujem s niekým' },
+  { value: 'Nerozhodujem', label: 'Nie, posuniem to ďalej' },
 ];

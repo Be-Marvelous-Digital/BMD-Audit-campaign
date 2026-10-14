@@ -1,51 +1,73 @@
-import { memo, type MouseEventHandler, type RefObject } from 'react';
-import { heroStats } from '../../data/content';
-import { CtaLink } from '../CtaLink';
+import { memo, useCallback, useState, type ChangeEvent, type FormEvent, type RefObject } from 'react';
+import { WEEKLY_CAPACITY } from '../../data/content';
+import { ArrowIcon } from '../ArrowIcon';
+import { BeforeAfter } from '../BeforeAfter';
 import { HeroCanvas } from '../HeroCanvas';
-import { PhoneMockup } from '../PhoneMockup';
 import styles from './Hero.module.less';
 
 interface HeroProps {
   sectionRef: RefObject<HTMLElement | null>;
-  onNoWebClick: MouseEventHandler<HTMLAnchorElement>;
+  onStart: (hasWeb: boolean, website: string) => void;
 }
 
-export const Hero = memo(({ sectionRef, onNoWebClick }: HeroProps) => (
-  <section id="top" ref={sectionRef} className={styles.hero} aria-labelledby="hero-title">
-    <HeroCanvas />
-    <div className={styles.hero__wash} aria-hidden="true" />
-    <div className={styles.hero__inner}>
-      <div className={styles.hero__copy}>
-        <p className={styles.hero__eyebrow}>Audit webu zadarmo pre malé, stredné firmy a živnostníkov</p>
-        <h1 id="hero-title" className={styles.hero__title}>
-          <span className={styles['hero__line--1']}>Hľadajú vás.</span>{' '}
-          <span className={styles['hero__line--2']}>Nájdu</span>{' '}
-          <span className={styles['hero__line--3']}>konkurenciu.</span>
-        </h1>
-        <p className={styles.hero__lead}>
-          Osobne prejdem váš web aj Google profil tak, ako ho vidí váš zákazník na mobile. Do 48 hodín vám pošlem
-          písomný audit: čo vám berie zákazníkov a jasný plán, ako to opraviť krok za krokom.{' '}
-          <strong>Zadarmo. Bez záväzkov. Bez predajcu.</strong>
-        </p>
-        <div className={styles.hero__actions}>
-          <CtaLink href="#formular" size="lg" withArrow shine>
-            Chcem audit zadarmo
-          </CtaLink>
-          <CtaLink href="#formular" size="lg" variant="outline-light" onClick={onNoWebClick}>
-            Web ešte nemám
-          </CtaLink>
-        </div>
-        <dl className={styles.hero__stats}>
-          {heroStats.map((stat) => (
-            <div key={stat.label} className={styles.hero__stat}>
-              <dt className={styles['hero__stat-label']}>{stat.label}</dt>
-              <dd className={styles['hero__stat-value']}>{stat.value}</dd>
+export const Hero = memo(({ sectionRef, onStart }: HeroProps) => {
+  const [website, setWebsite] = useState('');
+  const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>) => setWebsite(event.target.value), []);
+  const handleSubmit = useCallback(
+    (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      onStart(true, website);
+    },
+    [onStart, website],
+  );
+  const handleNoWeb = useCallback(() => onStart(false, ''), [onStart]);
+
+  return (
+    <section id="top" ref={sectionRef} className={styles.hero} aria-labelledby="hero-title">
+      <HeroCanvas />
+      <div className={styles.hero__wash} aria-hidden="true" />
+      <div className={styles.hero__inner}>
+        <div className={styles.hero__copy}>
+          <p className={styles.hero__eyebrow}>Pre majiteľov malých a stredných firiem</p>
+          <h1 id="hero-title" className={styles.hero__title}>
+            <span className={styles['hero__line--1']}>Váš nový web.</span>{' '}
+            <span className={styles['hero__line--2']}>Do 72 hodín.</span>{' '}
+            <span className={styles['hero__line--3']}>Zadarmo na ukážku.</span>
+          </h1>
+          <p className={styles.hero__lead}>
+            Pošlite mi adresu svojho webu a pár odpovedí. Navrhnem vám novú úvodnú stránku na mieru a pošlem odkaz,
+            kde si ju pozriete. <strong>Páči sa vám? Dotiahneme ju. Nie? Nič nedlžíte.</strong>
+          </p>
+          <form className={styles.start} action="#formular" onSubmit={handleSubmit}>
+            <label htmlFor="hero-website" className="visually-hidden">
+              Adresa vášho webu
+            </label>
+            <div className={styles.start__field}>
+              <input
+                id="hero-website"
+                type="text"
+                inputMode="url"
+                autoComplete="url"
+                placeholder="adresa vášho webu"
+                value={website}
+                onChange={handleChange}
+                className={styles.start__input}
+              />
+              <button type="submit" className={styles.start__button}>
+                Chcem náhľad
+                <ArrowIcon />
+              </button>
             </div>
-          ))}
-        </dl>
+            <button type="button" className={styles.start__alt} onClick={handleNoWeb}>
+              Web ešte nemám, mám len Instagram alebo Google profil
+            </button>
+          </form>
+          <p className={styles.hero__note}>
+            Navrhujem sám, preto najviac {WEEKLY_CAPACITY} náhľadov týždenne.
+          </p>
+        </div>
+        <BeforeAfter />
       </div>
-      <PhoneMockup />
-    </div>
-    <span className={styles.hero__cue} aria-hidden="true" />
-  </section>
-));
+    </section>
+  );
+});

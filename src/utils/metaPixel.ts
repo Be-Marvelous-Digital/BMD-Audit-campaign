@@ -21,6 +21,8 @@ declare global {
 export interface LeadDetails {
   hasWeb: boolean;
   business: string;
+  goal: string;
+  timeline: string;
 }
 
 const SCRIPT_SRC = 'https://connect.facebook.net/en_US/fbevents.js';
@@ -72,10 +74,12 @@ export function revokeMetaPixel(): void {
   window.fbq?.('consent', 'revoke');
 }
 
-export function trackLead({ hasWeb, business }: LeadDetails): void {
+export function trackLead({ hasWeb, business, goal, timeline }: LeadDetails): void {
   const params = {
-    content_name: hasWeb ? 'Audit webu zadarmo' : 'Konzultácia bez webu',
+    content_name: hasWeb ? 'Náhľad redizajnu' : 'Náhľad nového webu',
     content_category: business || 'neuvedené',
+    goal,
+    timeline,
     currency: 'EUR',
     value: 0,
   };

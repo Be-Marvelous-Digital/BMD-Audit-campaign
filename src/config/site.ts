@@ -1,12 +1,12 @@
 export const SITE = {
   url: 'https://audit.bemarvelousdigital.sk',
   name: 'Be Marvelous Digital',
-  title: 'Audit webu zadarmo pre malé firmy | Be Marvelous Digital',
+  title: 'Návrh nového webu zadarmo do 72 hodín | Be Marvelous Digital',
   description:
-    'Osobný písomný audit webu a Google profilu pre malé, stredné firmy a živnostníkov na Slovensku. Do 48 hodín zistíte, čo vám berie zákazníkov a ako to opraviť. Zadarmo, bez záväzkov.',
-  ogTitle: 'Hľadajú vás. Nájdu konkurenciu. Audit webu zadarmo',
+    'Pošlite adresu svojho webu a do 72 hodín vám navrhnem novú úvodnú stránku na mieru. Pre malé a stredné firmy a živnostníkov na Slovensku. Zadarmo, bez záväzkov.',
+  ogTitle: 'Váš nový web. Do 72 hodín. Zadarmo na ukážku.',
   ogDescription:
-    'Písomný audit do 48 hodín: čo vám na webe berie zákazníkov a jasný plán, ako to opraviť. Zadarmo, bez záväzkov.',
+    'Navrhnem vám novú úvodnú stránku na mieru a pošlem odkaz na náhľad. Páči sa vám? Dotiahneme ju. Nie? Nič nedlžíte.',
   ogImage: '/opengraph.png',
   locale: 'sk_SK',
   mainSiteUrl: 'https://bemarvelousdigital.sk',

@@ -9,5 +9,13 @@ export const MAILCHIMP = {
     firstName: 'FNAME',
     phone: 'PHONE',
     message: 'MESSAGE',
+    website: 'WEBSITE',
+    goal: 'GOAL',
+    style: 'STYLE',
+    inspiration: 'INSPIRE',
+    pains: 'PAINS',
+    business: 'BUSINESS',
+    timeline: 'TIMELINE',
+    role: 'ROLE',
   },
 } as const;

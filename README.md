@@ -1,4 +1,4 @@
-# Audit webu zadarmo
+# Návrh nového webu zadarmo
 
 Landing page for https://audit.bemarvelousdigital.sk. Vite + React + TypeScript + LESS, prerendered to static HTML at build time.
 
@@ -19,7 +19,7 @@ The form submits in place through Mailchimp's `post-json` (JSONP) endpoint and s
 - `VITE_MAILCHIMP_ACTION`: form action URL
 - `VITE_MAILCHIMP_HONEYPOT`: honeypot field name (`b_<u>_<id>`)
 
-Submitted fields: `EMAIL`, `FNAME`, `PHONE`, `MESSAGE`. Business type, website and social profile are combined into `MESSAGE`.
+Submitted fields: `EMAIL`, `FNAME`, `PHONE`, `MESSAGE` plus the qualification fields `WEBSITE`, `GOAL`, `STYLE`, `INSPIRE`, `PAINS`, `BUSINESS`, `TIMELINE`, `ROLE`. Create each of them in the Mailchimp audience as a text merge field with exactly that tag, otherwise Mailchimp drops the value. `MESSAGE` holds the visitor's free-text note prefixed with `[Náhľad 72 h]`.
 
 An email that is already in the audience gets an "already subscribed" response from Mailchimp; the form then asks the visitor to write directly.
 
@@ -29,7 +29,7 @@ Set `VITE_META_PIXEL_ID` (see `.env.example`). While the ID is the dummy `000000
 
 - The pixel loads only after the visitor accepts marketing cookies in the consent banner (cookie `cookie_consent`, same format as bemarvelousdigital.sk). Consent can be changed via "Nastavenia cookies" in the footer; withdrawing it calls `fbq('consent', 'revoke')`.
 - On load: `PageView`.
-- On successful form submit: `Lead` with `content_name` (audit / konzultácia), `content_category` (business type), `value: 0`, `currency: EUR` and a unique `eventID` ready for Conversions API deduplication.
+- On successful form submit: `Lead` with `content_name` (náhľad redizajnu / nového webu), `content_category` (business type), `goal`, `timeline`, `value: 0`, `currency: EUR` and a unique `eventID` ready for Conversions API deduplication.
 
 ## Open Graph image
 

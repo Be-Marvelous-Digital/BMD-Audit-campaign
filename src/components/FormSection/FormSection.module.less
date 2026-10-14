@@ -4,8 +4,8 @@
 .section {
   .section-pad();
   position: relative;
-  overflow: hidden;
-  background: @color-night-raised;
+  overflow: clip;
+  background: @color-night;
   color: @color-cream;
 
   &__wash {
@@ -20,9 +20,15 @@
 
   &__inner {
     .container();
-    .split-grid(420px);
     position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: @space-split;
     align-items: start;
+
+    @media @bp-md {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__copy {
@@ -31,36 +37,20 @@
     gap: @space-6;
     min-width: 0;
     container-type: inline-size;
-  }
 
-  &__kicker {
-    display: inline-flex;
-    align-items: baseline;
-    gap: @space-3;
-    margin: 0;
-    .kicker(@color-cream-3);
-  }
-
-  &__index {
-    font-family: @font-mono;
-    font-weight: @font-weight-medium;
-    letter-spacing: 0;
-    color: @color-accent-bright;
+    @media @bp-lg {
+      position: sticky;
+      top: calc(@header-height + @space-8);
+    }
   }
 
   &__title {
     margin: 0;
     font-family: @font-display;
     font-weight: @font-weight-black;
-    font-size: min(8.2cqi, 4.75rem);
-    line-height: 1;
+    font-size: min(9cqi, 4.25rem);
+    line-height: 1.02;
     letter-spacing: @tracking-display;
-    text-transform: uppercase;
-
-    @media @bp-sm {
-      font-size: min(10.4cqi, 2.75rem);
-      text-transform: none;
-    }
     text-wrap: balance;
   }
 
@@ -71,24 +61,18 @@
   }
 }
 
-.guarantee {
+.facts {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  max-width: 480px;
-  padding: @space-5 @space-6;
-  border: 1px solid @color-cream-line;
-  border-radius: @radius-md;
+  gap: @space-3;
+  margin: 0;
+  padding: @space-6 0 0;
+  border-top: 1px solid @color-cream-line;
+  list-style: none;
+  color: @color-cream-2;
 
-  &__title {
-    margin: 0;
-    .kicker(@color-accent-bright);
-  }
-
-  &__text {
-    margin: 0;
-    font-size: @font-size-base;
-    line-height: 1.55;
+  strong {
+    font-weight: @font-weight-semibold;
     color: @color-cream;
   }
 }

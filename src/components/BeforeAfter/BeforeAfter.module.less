@@ -1,0 +1,227 @@
+@import (reference) 'global';
+@import (reference) 'mixins';
+
+.figure {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: @space-4;
+  min-width: 0;
+  margin: 56px 0 0;
+  animation: rise 1100ms @ease-out 500ms both;
+}
+
+.browser {
+  overflow: hidden;
+  border: 1px solid @color-cream-line-strong;
+  border-radius: @radius-md;
+  background: @color-night-phone;
+  box-shadow: @shadow-deep;
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    gap: @space-4;
+    height: 40px;
+    padding-inline: 14px;
+    border-bottom: 1px solid @color-cream-line;
+  }
+
+  &__dots {
+    display: flex;
+    gap: 6px;
+
+    i {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: @color-cream-line-strong;
+    }
+  }
+
+  &__url {
+    flex: 1;
+    min-width: 0;
+    max-width: 280px;
+    margin-inline: auto;
+    padding: 4px 12px;
+    overflow: hidden;
+    border-radius: @radius-pill;
+    background: rgba(247, 244, 238, 0.08);
+    font-size: @font-size-2xs;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: @color-cream-2;
+  }
+}
+
+.compare {
+  position: relative;
+  aspect-ratio: 1400 / 879;
+  overflow: hidden;
+  user-select: none;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+
+    &--before {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+    }
+  }
+
+  &__range {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: ew-resize;
+    touch-action: pan-y;
+  }
+
+  &:has(&__range:focus-visible) .handle {
+    .focus-ring(3px);
+  }
+}
+
+.divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--pos);
+  z-index: 2;
+  width: 2px;
+  background: @color-cream;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.handle {
+  position: absolute;
+  top: 50%;
+  left: var(--pos);
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 2px solid @color-cream;
+  border-radius: 50%;
+  background: @color-accent;
+  color: @color-cream;
+  box-shadow: 0 6px 24px @color-accent-shadow;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+
+  @media @motion-ok {
+    &::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      border: 2px solid @color-accent-bright;
+      animation: handle-ping 2.2s @ease-out infinite;
+    }
+  }
+}
+
+.hint {
+  position: absolute;
+  top: calc(50% + 36px);
+  left: var(--pos);
+  z-index: 3;
+  padding: 6px 12px;
+  border-radius: @radius-pill;
+  background: rgba(13, 13, 11, 0.85);
+  color: @color-cream;
+  font-size: @font-size-2xs;
+  font-weight: @font-weight-semibold;
+  letter-spacing: @tracking-wide;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  pointer-events: none;
+  transition:
+    opacity @duration-slow @ease-out,
+    visibility 0s linear @duration-slow;
+
+  &--hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.compare:has(.hint--hidden) .handle::after {
+  animation: none;
+  opacity: 0;
+}
+
+@keyframes handle-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  70%,
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.tag {
+  position: absolute;
+  z-index: 5;
+  padding: 9px 16px;
+  border-radius: @radius-pill;
+  font-size: @font-size-xs;
+  font-weight: @font-weight-semibold;
+  letter-spacing: @tracking-wide;
+  white-space: nowrap;
+  box-shadow: @shadow-float;
+  pointer-events: none;
+
+  @media @motion-ok {
+    animation: tag-float 5s @ease-in-out infinite;
+  }
+
+  &--before {
+    top: -50px;
+    left: 4%;
+    border: 1px solid @color-cream-line-strong;
+    background: @color-night-raised;
+    color: @color-cream-2;
+  }
+
+  &--after {
+    top: -50px;
+    right: 4%;
+    background: @color-accent;
+    color: @color-cream;
+    box-shadow: 0 16px 48px @color-accent-shadow;
+    animation-delay: -2.5s;
+  }
+}
+
+@keyframes tag-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-1.5deg);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0) rotate(1deg);
+  }
+}
+
+.caption {
+  font-size: @font-size-2xs;
+  color: @color-cream-3;
+}

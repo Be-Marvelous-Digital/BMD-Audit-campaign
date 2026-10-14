@@ -23,7 +23,7 @@ export const Header = memo(({ tone, hidden, ctaVisible }: HeaderProps) => (
         size="sm"
         className={[styles.header__cta, ctaVisible && styles['header__cta--visible']].filter(Boolean).join(' ')}
       >
-        Audit zadarmo
+        Chcem náhľad
       </CtaLink>
     </div>
   </header>

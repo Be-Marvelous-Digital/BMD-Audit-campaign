@@ -1,0 +1,67 @@
+@import (reference) 'global';
+@import (reference) 'mixins';
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid @color-cream-line-strong;
+  border-radius: @radius-pill;
+  background: @color-night-raised;
+  color: @color-cream-2;
+  font-size: 0.9375rem;
+  line-height: 1.25;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    border-color @duration-fast @ease-out,
+    background-color @duration-fast @ease-out,
+    color @duration-fast @ease-out,
+    transform @duration-fast @ease-out;
+
+  &:hover {
+    border-color: @color-accent-bright;
+    color: @color-cream;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &--checked {
+    border-color: @color-accent;
+    background: @color-accent-tint-strong;
+    color: @color-cream;
+  }
+
+  &:has(&__input:focus-visible) {
+    .focus-ring(2px);
+  }
+
+  &__input {
+    .visually-hidden();
+  }
+
+  &__box {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid @color-cream-line-strong;
+    border-radius: 5px;
+    color: transparent;
+    transition:
+      background-color @duration-fast @ease-out,
+      border-color @duration-fast @ease-out,
+      color @duration-fast @ease-out;
+  }
+
+  &--checked &__box {
+    border-color: @color-accent;
+    background: @color-accent;
+    color: @color-cream;
+  }
+}

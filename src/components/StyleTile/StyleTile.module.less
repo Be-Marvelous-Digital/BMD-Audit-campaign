@@ -1,0 +1,194 @@
+@import (reference) 'global';
+@import (reference) 'mixins';
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: @space-3;
+  padding: 8px 8px 14px;
+  border: 1px solid @color-cream-line-strong;
+  border-radius: @radius-md;
+  background: @color-night-raised;
+  color: @color-cream;
+  cursor: pointer;
+  transition:
+    border-color @duration-fast @ease-out,
+    background-color @duration-fast @ease-out,
+    transform @duration-fast @ease-out;
+
+  &:hover {
+    border-color: @color-accent-bright;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &--checked {
+    border-color: @color-accent;
+    background: @color-accent-tint-strong;
+    box-shadow: 0 0 0 1px @color-accent;
+  }
+
+  &:has(&__input:focus-visible) {
+    .focus-ring(2px);
+  }
+
+  &__input {
+    .visually-hidden();
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-inline: 6px;
+  }
+
+  &__label {
+    font-size: 0.9375rem;
+    font-weight: @font-weight-semibold;
+  }
+
+  &__description {
+    font-size: @font-size-2xs;
+    line-height: 1.4;
+    color: @color-cream-3;
+  }
+}
+
+.sample {
+  position: relative;
+  display: block;
+  height: 72px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--s-base);
+  color: var(--s-ink);
+
+  &__type {
+    position: absolute;
+    left: 12px;
+    bottom: 8px;
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+
+  &__bar {
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    width: 42%;
+    height: 4px;
+    border-radius: 2px;
+    background: currentColor;
+    opacity: 0.35;
+  }
+
+  &__dot {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    width: 18px;
+    height: 18px;
+    background: var(--s-accent);
+  }
+
+  &--clean &__type {
+    font-family: @font-body;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  &--clean &__dot {
+    width: 28px;
+    height: 2px;
+    border-radius: 0;
+  }
+
+  &--bold &__type {
+    font-family: @font-display;
+    font-weight: @font-weight-black;
+    font-size: 2.25rem;
+    text-transform: uppercase;
+    color: var(--s-accent);
+  }
+
+  &--bold &__dot {
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    height: 8px;
+  }
+
+  &--warm &__type {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+  }
+
+  &--warm &__dot {
+    width: 34px;
+    height: 34px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 50% 50% 50% 0;
+  }
+
+  &--elegant &__type {
+    font-family: 'Didot', 'Bodoni 72', Georgia, serif;
+    font-size: 1.875rem;
+    letter-spacing: 0.04em;
+    color: var(--s-accent);
+  }
+
+  &--elegant &__bar {
+    height: 1px;
+    background: var(--s-accent);
+    opacity: 1;
+  }
+
+  &--elegant &__dot {
+    width: 1px;
+    height: 32px;
+  }
+
+  &--playful &__type {
+    font-family: @font-display;
+    font-weight: @font-weight-bold;
+    color: var(--s-ink);
+    transform: rotate(-6deg);
+  }
+
+  &--playful &__dot {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    box-shadow: -16px -22px 0 -4px var(--s-ink);
+  }
+
+  &--open {
+    background: repeating-linear-gradient(135deg, transparent 0 8px, rgba(247, 244, 238, 0.06) 8px 9px), @color-night;
+    border: 1px dashed @color-cream-line-strong;
+    color: @color-cream;
+  }
+
+  &--open &__type {
+    font-family: @font-display;
+    font-weight: @font-weight-bold;
+  }
+
+  &--open &__type::after {
+    content: '?';
+    color: @color-accent-bright;
+  }
+
+  &--open &__bar {
+    display: none;
+  }
+
+  &--open &__dot {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+  }
+}

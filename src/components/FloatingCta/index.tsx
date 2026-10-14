@@ -13,7 +13,7 @@ export const FloatingCta = memo(({ visible }: FloatingCtaProps) => (
     aria-hidden={visible ? undefined : true}
     tabIndex={visible ? undefined : -1}
   >
-    Audit zadarmo
+    Náhľad zadarmo
     <ArrowIcon />
   </a>
 ));

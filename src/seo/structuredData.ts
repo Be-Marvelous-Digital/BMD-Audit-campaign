@@ -1,5 +1,5 @@
 import { SITE } from '../config/site';
-import { faqs, offerIncludes } from '../data/content';
+import { faqs, steps } from '../data/content';
 
 export function buildStructuredData(): string {
   const pageUrl = `${SITE.url}/`;
@@ -51,9 +51,9 @@ export function buildStructuredData(): string {
     {
       '@type': 'Service',
       '@id': `${pageUrl}#service`,
-      name: 'Audit webu a Google profilu zadarmo',
-      serviceType: 'Audit webu',
-      description: offerIncludes.join('. '),
+      name: 'Návrh novej úvodnej stránky webu zadarmo',
+      serviceType: 'Webdizajn',
+      description: steps.map((step) => `${step.title}: ${step.description}`).join(' '),
       provider: { '@id': orgId },
       areaServed: { '@type': 'Country', name: 'Slovensko' },
       audience: { '@type': 'BusinessAudience', name: 'Malé a stredné firmy a živnostníci' },
