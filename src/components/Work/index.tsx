@@ -25,6 +25,7 @@ export const Work = memo(() => (
                   height={item.height}
                   loading="lazy"
                   decoding="async"
+                  style={{ aspectRatio: `${item.width} / ${item.height}` }}
                   className={styles.project__image}
                 />
               </div>

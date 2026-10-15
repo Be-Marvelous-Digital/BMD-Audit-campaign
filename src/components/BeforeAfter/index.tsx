@@ -79,7 +79,7 @@ export const BeforeAfter = memo(() => {
             src={leadermAfter}
             alt="Nový web kožnej ambulancie Leaderm: veľký portrét lekárky, elegantný nadpis a tlačidlo na objednanie"
             width={1400}
-            height={879}
+            height={878}
             fetchPriority="high"
             decoding="async"
             className={styles.compare__image}
@@ -88,7 +88,7 @@ export const BeforeAfter = memo(() => {
             src={leadermBefore}
             alt="Pôvodný web Leaderm: slider so stockovou fotkou modelky a vodou, menu s farebnými tlačidlami"
             width={1400}
-            height={879}
+            height={878}
             decoding="async"
             className={[styles.compare__image, styles['compare__image--before']].join(' ')}
           />

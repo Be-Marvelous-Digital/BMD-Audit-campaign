@@ -76,7 +76,7 @@ export const work: WorkItem[] = [
     category: 'Kožná ambulancia',
     alt: 'Úvodná stránka webu kožnej ambulancie Leaderm v Galante',
     width: 1200,
-    height: 748,
+    height: 753,
   },
   {
     image: workMnam,
@@ -92,7 +92,7 @@ export const work: WorkItem[] = [
     category: 'Reštaurácia',
     alt: 'Úvodná stránka webu reštaurácie Leone Pub & Restaurant v Harichovciach',
     width: 1200,
-    height: 753,
+    height: 880,
   },
   {
     image: workEyesOpen,
