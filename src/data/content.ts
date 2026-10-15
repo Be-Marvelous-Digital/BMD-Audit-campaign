@@ -97,8 +97,8 @@ export const work: WorkItem[] = [
   {
     image: workEyesOpen,
     name: 'Eyes Open',
-    category: 'Služby',
-    alt: 'Úvodná stránka webu optiky Eyes Open',
+    category: 'Brandingové štúdio',
+    alt: 'Úvodná stránka webu brandingového štúdia Eyes Open',
     width: 1200,
     height: 880,
   },

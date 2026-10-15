@@ -103,8 +103,8 @@ export const BeforeAfter = memo(() => {
           </span>
           <input
             type="range"
-            min={4}
-            max={96}
+            min={0}
+            max={100}
             value={position}
             onChange={handleChange}
             onKeyDown={markTouched}

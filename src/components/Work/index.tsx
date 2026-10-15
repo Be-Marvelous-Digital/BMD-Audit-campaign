@@ -10,7 +10,7 @@ export const Work = memo(() => (
       <SectionIntro
         id="work-title"
         title="Takto navrhujem pre lokálne firmy."
-        lead="Kožná ambulancia, reštaurácia, donáška jedla, optika. Weby, na ktorých zákazník na mobile hneď vie, čo robiť: zavolať, prísť alebo si objednať."
+        lead="Kožná ambulancia, reštaurácia, donáška jedla, brandingové štúdio. Weby, na ktorých zákazník na mobile hneď vie, čo robiť: zavolať, prísť alebo si objednať."
         tone="dark"
       />
       <ul className={styles.work__grid}>

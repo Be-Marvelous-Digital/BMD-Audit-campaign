@@ -12,7 +12,6 @@
 }
 
 .browser {
-  overflow: hidden;
   border: 1px solid @color-cream-line-strong;
   border-radius: @radius-md;
   background: @color-night-phone;
@@ -25,6 +24,7 @@
     height: 40px;
     padding-inline: 14px;
     border-bottom: 1px solid @color-cream-line;
+    border-radius: (@radius-md - 1px) (@radius-md - 1px) 0 0;
   }
 
   &__dots {
@@ -59,7 +59,6 @@
 .compare {
   position: relative;
   aspect-ratio: 1400 / 878;
-  overflow: hidden;
   user-select: none;
 
   &__image {
@@ -67,12 +66,13 @@
     height: 100%;
     object-fit: cover;
     object-position: top;
+    border-radius: 0 0 (@radius-md - 1px) (@radius-md - 1px);
 
     &--before {
       position: absolute;
       inset: 0;
       z-index: 1;
-      clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+      clip-path: inset(0 calc(100% - var(--pos)) 0 0 round 0 0 0 (@radius-md - 1px));
     }
   }
 
@@ -138,7 +138,7 @@
 .hint {
   position: absolute;
   top: calc(50% + 36px);
-  left: var(--pos);
+  left: clamp(96px, var(--pos), calc(100% - 96px));
   z-index: 3;
   padding: 6px 12px;
   border-radius: @radius-pill;
