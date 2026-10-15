@@ -16,7 +16,7 @@ Deploy the contents of `dist/` to any static host.
 
 The form submits in place through Mailchimp's `post-json` (JSONP) endpoint and shows a success or error message without leaving the page. The `action`/`method="post"` attributes stay as a no-JS fallback. It uses the same audience as bemarvelousdigital.sk. Override with env vars (see `.env.example`):
 
-- `VITE_MAILCHIMP_ACTION`: form action URL
+- `VITE_MAILCHIMP_ACTION`: form action URL. Any `f_id` parameter is stripped before submitting, because Mailchimp then only accepts that form's own fields.
 - `VITE_MAILCHIMP_HONEYPOT`: honeypot field name (`b_<u>_<id>`)
 
 Submitted fields: `EMAIL`, `FNAME`, `PHONE`, `MESSAGE` plus the qualification fields `WEBSITE`, `GOAL`, `STYLE`, `INSPIRE`, `PAINS`, `BUSINESS`, `TIMELINE`, `ROLE`. Create each of them in the Mailchimp audience as a text merge field with exactly that tag, otherwise Mailchimp drops the value. `MESSAGE` holds the visitor's free-text note prefixed with `[Náhľad 72 h]`.

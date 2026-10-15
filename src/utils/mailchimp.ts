@@ -9,6 +9,8 @@ const TIMEOUT_MS = 15000;
 
 export function toJsonpUrl(action: string, fields: Record<string, string>, callback: string): string {
   const url = new URL(action.replace('/subscribe/post?', '/subscribe/post-json?'));
+  // f_id limits accepted merge fields to that one signup form, dropping the qualification fields.
+  url.searchParams.delete('f_id');
   Object.entries(fields).forEach(([key, value]) => url.searchParams.set(key, value));
   url.searchParams.set('c', callback);
   return url.toString();

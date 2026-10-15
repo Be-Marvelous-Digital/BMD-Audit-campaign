@@ -27,7 +27,7 @@ interface ContactStepProps {
 }
 
 function isAlert(status: SubmitStatus): status is SubmitAlertKind {
-  return status === 'error' || status === 'already-subscribed' || status === 'invalid-email' || status === 'rate-limited';
+  return status === 'error' || status === 'already-subscribed' || status === 'rate-limited';
 }
 
 export const ContactStep = memo(

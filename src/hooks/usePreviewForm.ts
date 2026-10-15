@@ -18,6 +18,9 @@ import { trackLead } from '../utils/metaPixel';
 
 export type SubmitStatus = 'idle' | 'submitting' | SubscribeOutcome;
 
+const INVALID_EMAIL_MESSAGE =
+  'Túto adresu nemôžem použiť, nedá sa na ňu doručiť e-mail. Skontrolujte ju alebo zadajte inú.';
+
 export interface PreviewPrefill {
   id: number;
   hasWeb: boolean;
@@ -160,13 +163,17 @@ export function usePreviewForm(prefill: PreviewPrefill | null): PreviewFormApi {
       subscribe(MAILCHIMP.action, collectFields(event.currentTarget, 'preview-'))
         .then((outcome) => {
           setStatus(outcome);
+          if (outcome === 'invalid-email') {
+            setErrors({ email: INVALID_EMAIL_MESSAGE });
+            focusField('email');
+          }
           if (outcome === 'success') {
             trackLead({ hasWeb: values.hasWeb, business: values.business, goal: values.goal, timeline: values.timeline });
           }
         })
         .catch(() => setStatus('error'));
     },
-    [step, values, status, advance],
+    [step, values, status, advance, focusField],
   );
 
   return {

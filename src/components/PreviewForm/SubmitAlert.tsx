@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { SITE } from '../../config/site';
 import styles from './PreviewForm.module.less';
 
-export type SubmitAlertKind = 'error' | 'already-subscribed' | 'invalid-email' | 'rate-limited';
+export type SubmitAlertKind = 'error' | 'already-subscribed' | 'rate-limited';
 
 interface SubmitAlertProps {
   kind: SubmitAlertKind;
@@ -10,7 +10,6 @@ interface SubmitAlertProps {
 
 const MESSAGES: Record<SubmitAlertKind, string> = {
   'already-subscribed': 'Tento e-mail už mám v zozname, takže sa formulár neuložil znova. Napíšte mi prosím priamo na ',
-  'invalid-email': 'Tento e-mail sa nepodarilo overiť. Skontrolujte ho, prípadne mi napíšte priamo na ',
   'rate-limited': 'Z tohto e-mailu prišlo priveľa pokusov za krátky čas. Skúste to o pár minút alebo mi napíšte na ',
   error: 'Odoslanie sa nepodarilo. Skúste to znova o chvíľu, alebo mi napíšte na ',
 };
