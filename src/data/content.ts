@@ -112,7 +112,6 @@ export const fitYes: string[] = [
 ];
 
 export const fitNo: string[] = [
-  'Hľadáte e-shop so stovkami produktov.',
   'Chcete návrh len ako podklad pre iného dodávateľa.',
   'Web potrebujete hotový do zajtra.',
 ];
